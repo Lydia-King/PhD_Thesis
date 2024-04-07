@@ -1,0 +1,72 @@
+\pagenumbering{roman} %correct numbering for frontmatter
+    \vspace{1.5cm}
+    
+    \section*{\Large{Abstract}}
+    \phantomsection
+    \addcontentsline{toc}{section}{Abstract}
+    \markboth{\MakeUppercase{Abstract}}{\MakeUppercase{Abstract}}
+    \vspace{0.5cm}
+    
+Genomic instability (GI), defined as an increased tendency for genomic alterations to occur, is a common feature of cancers and is recognised as a “facilitating” hallmark of cancer. Genomic alterations include base substitutions, indels, rearrangements and copy number alterations (CNAs). CNAs in cancer have been extensively profiled but due to the complexity of cancer genomes, frequent deviations from diploidy, i.e. having two sets of homologous chromosomes, and the presence of both tumour and non-tumour cells, many studies have been limited to reporting total copy number, the sum of the copy numbers of the two homologous chromosomes. Determining the CNA landscape of each homologous chromosome, i.e. allele-specific copy number, is important for the characterisation of certain genomic aberrations and the inference of their clonal history.   
+
+Breast cancer is largely dominated by CNAs, rather than mutations in a single gene, with increasing evidence suggesting that the genomic landscape of the tumour is associated with survival and incorporating this information into treatment decisions is beneficial to the patient. 
+
+This thesis uses total and allele-specific CNA data to explore the CNA landscape of breast tumours and their associations with survival. Focusing on observations from the Molecular Taxonomy of Breast Cancer International Consortium (METABRIC) cohort, we define novel metrics for total CNA measurements, estimating the distribution of these metrics allowing for missing values. 
+
+Analysing distributions of the CNA metrics comparing groups of patients stratified by molecular classifications indicates that subtypes associated with worse survival outcomes tend to have significantly higher levels of GI, and higher deletion burden, than subtypes associated with better survival outcomes.   
+
+Further investigation of these CNA metrics in the context of survival indicates that for molecular classifications displaying low levels of GI, the CNA metrics can partition patients based on survival outcome and aid in the identification of patients who may be more at risk. CNA metrics consistently selected as useful predictors for survival outcome include CNA metrics measuring the copy number deletion landscape, further indicating that deletions are more harmful than amplifications. 
+
+Differential gene expression analysis is carried out to investigate the effect that CNAs have on gene expression. Genes observed to be dysregulated in patients with decreased survival outcomes are known to facilitate cell proliferation, tumour progression and invasion. Investigating the direct relationship between a gene's CNA state and its expression, using a modified limma pipeline, two differentially expressed gene sets are produced, with some degree of congruence observed when comparing to published predictive and prognostic assays and additional genes emerging as new focus.  
+
+Deriving allele-specific copy number profiles applying Allele-Specific Copy number Analysis of Tumours (ASCAT), models are proposed and assessed to identify and model features of changepoints in these profiles,  including allele independent (AI) models and allele dependent (AD) models. Application of the AD models to defined intervals, including gene regions and genomic segments of specified length, identifies a number of gene and non-gene regions of interest.  
+\raggedbottom  
+
+    \section*{\Large{Acknowledgements}} %the asterisk is to have an unnumbered section
+    \phantomsection %this declares an anchor point
+    \addcontentsline{toc}{section}{Acknowledgements} %this adds the unnumbered section to the ToC with the right page number
+    
+    \markboth{\MakeUppercase{Acknowledgements}}{\MakeUppercase{Acknowledgements}}
+    
+    \vspace{0.5cm}
+    
+    First and foremost, I would like to sincerely thank my supervisor Dr. Emma Holian. I could not have carried out this research and completed this thesis without your knowledge, dedication, guidance and unwavering support week in, week out. It has been a privilege working with you. I
+would also like to thank my co-supervisors, Prof. Róisín Dwyer and Dr. Simone Coughlan. I really appreciate all the guidance and support you've both given me. A massive thank you to Prof. Levi Waldron and Marcel Ramos, you both welcomed me with open arms and made my time in New York unforgettable.
+
+To Prof. Aaron Golden, thank you for setting in motion my PhD, introducing me to Emma, and sometimes knowing what was best for me, even when I didn’t know it myself. From the MSc to PhD, you have always had my back and for that I am eternally grateful.    
+
+Thank you to my GRC, Prof. Aaron Golden (again), Dr. Andrew Simpkin and Dr. Andrew Flaus for your support and advice each year.    
+
+To my fellow bioinformatics and statistics PhD students and colleagues, thank you for being welcoming, supportive and most importantly always up for laugh. I am forever grateful that I spent my PhD in such a positive environment.    
+
+Sarah and Shane, who have been there since day one, I would have been lost without both of you! Sarah, queen of data vis, gnome aficionado and most importantly my long-suffering housemate for much of the PhD, thank you from the bottom of my heart for all your love and support, for always agreeing to a bottle of wine or a spice bag, and for introducing me to Made in Chelsea, it’s gotten me through some rough times! Shane, thank you for being someone who I could bounce anything off, someone who always listened and tried to understand, you’ve helped me in a million different ways, and for that I thank you immensely. I am so thankful we all ended up in ADB-1019 at the same time and I'm incredibly lucky to consider you both my friends. 
+
+To everyone in the CRT, particularly the CRT management, Dr. Sandra Healy and Prof. Cathal Seoighe, and those in the Galway CRT office, you’ve all played such a massive role in my PhD journey, and I am so lucky to have been part of the wonderful CRT community. It has been a privilege to work in an environment where everyone has a diverse skillset, a willingness to share their knowledge and an ability to recognise when it’s time to call it a day and have some fun. A massive thank you to Anna, Sophie and Amanda, I really appreciate all the support you’ve given me, all the laughs we’ve shared and all the hugs that got me through the day. I could always rely on you for anything, and I hope you know what amazing, kind and generous people you are. Dónal and Micheál, thank you both for being a constant source of kindness, reassurance and laughter! I am going to miss all our random conversations, particularly about rowing, a topic I have significantly more knowledge about now than when I started the PhD. Siobhán, though COVID got in the way, I am so grateful to have had the opportunity to get to know you. It was such a joy to talk to someone who seemed to understand exactly where I was coming from, our coffee dates were just what I needed, and I already miss them terribly. A massive thank you to Anthony and Declan, without your help I'm not sure I would have finished this PhD, if you know, you know.  
+
+To all my friends, particularly Ciara, Ailbhe, and Kevin. Thank you for being by my side every step of the way, through the good times but also when things weren’t going my way and you had to listen to my frustrated ranting. You all encouraged me to keep going and always left me with a smile on my face.  
+
+To my parents Clarissa and David, I can’t thank you enough for everything you have done for me. Without your constant encouragement, support and love, I would not be who I am today. I know how lucky I am to have such amazing parents and I hope you know just how much I love you. Thank you to my siblings, Abbie and David. I credit much of this finished PhD thesis to you Abbie, your constant “are you not finished your thesis yet” or “I think you’ve been slacking” or “this is getting a bit ridiculous now” motivated me to finish, if only to make you stop.  
+
+To Galway, the place I have called home for the past five and a half years, it was so easy to fall in love with you and there are so many things I will miss including Charlie Byrne's Bookshop, Knocknacarra parkrun, Xian spice bags, the Prom, Bierhaus, Caribou and the Secret Garden.  
+
+Lastly, to Patsy, your house was the first place I lived in Galway, and you were the first friend I made, thank you for everything.    
+   
+\newpage
+
+    \vspace{1.5cm}
+    
+    \section*{\Large{Declaration of Authorship}}
+    \phantomsection
+    \addcontentsline{toc}{section}{Declaration of Authorship}
+    \markboth{\MakeUppercase{Declaration of Authorship}}{\MakeUppercase{Declaration of Authorship}}
+    \vspace{0.5cm}
+    
+I hereby declare that this thesis titled, ‘The Role of Genomic Data in Stratifying Patients within Predictive Models for Breast Cancer Survival Outcome’ submitted in partial fulfilment of the requirements for the degree of Doctor of Philosophy is entirely my own work and I have acknowledged any assistance or contributions and cited the published work of others where applicable. The research contained within this thesis has emanated from research supported by a research grant from Science Foundation Ireland (SFI) and the National Breast Cancer Research Institute (NBCRI) under Grant number 18/CRT/6214. This work has not been submitted by me or another person for the purpose of obtaining any other degree.
+
+\vspace{5cm}
+
+\noindent
+\begin{tabular}{@{}p{0.5\textwidth}@{} @{}p{0.5\textwidth}@{}}
+\includegraphics[width=3cm, height=1cm]{/home/lydia/Downloads/signature_pandadoc2.png} & 08/04/2024 \\
+\wildcard{Signature} & \wildcard{Date}
+\end{tabular}
