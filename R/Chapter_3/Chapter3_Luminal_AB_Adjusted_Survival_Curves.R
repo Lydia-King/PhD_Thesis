@@ -48,17 +48,9 @@ NewData_Lum <- NewData_Lum %>% mutate(
     "Her2_Status" = getmode(Luminal_Data$Her2_Status)
 )
 
-NewData_Lum1 <- NewData_Lum %>% mutate(
-    "LYMPH_NODES_EXAMINED_POSITIVE" = mean(Luminal_Data$LYMPH_NODES_EXAMINED_POSITIVE, na.rm = T),
-    "AGE_AT_DIAGNOSIS" =  mean(Luminal_Data$AGE_AT_DIAGNOSIS, na.rm = T),
-    "TUMOR_SIZE" = mean(Luminal_Data$TUMOR_SIZE, na.rm = T),
-    "GRADE" = getmode(Luminal_Data$GRADE),
-    "Her2_Status" = getmode(Luminal_Data$Her2_Status)
-)
-
 ## Luminal A
 fit <-
-    survfit(res.cox_DSS, newdata = NewData_Lum1[NewData_Lum1$CLAUDIN_SUBTYPE == "LumA",])
+    survfit(res.cox_DSS, newdata = NewData_Lum[NewData_Lum$CLAUDIN_SUBTYPE == "LumA",])
 
 plot_A <-
     ggsurvplot(
@@ -101,7 +93,7 @@ invisible(dev.off())
 
 ## Luminal B
 fit <-
-    survfit(res.cox_DSS, newdata = NewData_Lum1[NewData_Lum1$CLAUDIN_SUBTYPE == "LumB",])
+    survfit(res.cox_DSS, newdata = NewData_Lum[NewData_Lum$CLAUDIN_SUBTYPE == "LumB",])
 
 plot_B <-
     ggsurvplot(
