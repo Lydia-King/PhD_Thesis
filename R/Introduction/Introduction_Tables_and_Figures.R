@@ -73,14 +73,12 @@ as_gt(treatment_data) %>% gtsave("Table2_Treatment.png", path = "../../tables/In
 
 ## Table 3 - Survival Characteristics
 surv_data <- clinical_data %>%
-    select(OS_MONTHS, OS_STATUS, VITAL_STATUS, RFS_MONTHS, RFS_STATUS) %>%
-    mutate("OS_STATUS" = ifelse(OS_STATUS == "0:LIVING", "Living", "Deceased")) %>%
+    select(OS_STATUS, VITAL_STATUS, RFS_STATUS) %>%
+    mutate(OS_STATUS = ifelse(OS_STATUS == "0:LIVING", "Living", "Deceased")) %>%
     mutate(RFS_STATUS = ifelse(RFS_STATUS == "0:Not Recurred", "Not Recurred", "Recurred")) %>%
-    rename("Survival Time (Months)" = OS_MONTHS,
-           "Overall Survival" = OS_STATUS,
+    rename("Overall Survival" = OS_STATUS,
            "Disease-specific Survival" = VITAL_STATUS,
-           "Recurrence-free Survival" = RFS_STATUS,
-           "Recurrence Time (Months)" = RFS_MONTHS) %>%
+           "Recurrence-free Survival" = RFS_STATUS) %>%
     tbl_summary(missing_text = "NA",  type = all_dichotomous() ~ "categorical" ) %>%
     bold_labels() %>%
     modify_header(label ~ "**Survival Characteristics**")
