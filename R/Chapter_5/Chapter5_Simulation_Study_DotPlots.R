@@ -61,7 +61,7 @@ for(i in 1:length(Results_List)){
                   theme(axis.title.x = element_text(size = 18)) + theme(plot.subtitle=element_text(hjust=0.5, size= 25, face="bold")) +
                   theme(legend.position = c("top"), legend.direction = "horizontal") + theme(axis.title.x = element_text(size=18), legend.spacing.x = unit(0.6, 'cm')) +
                   ggh4x::facet_grid2(Allele~Direction, scales = "free", independent = "x") + theme(strip.text = element_text(size = 20)) + theme(legend.position = "none") + 
-                  ggtitle("(A) Plot of Prediction Estimates from 20 Simulated Datasets"))
+                  ggtitle("(A) Plot of Parameter Estimates from 20 Simulated Datasets"))
         dev.off()
     } else {
         print(m1 %>% ggplot(aes(x = Both, y = Pred, color = Both)) +
@@ -73,7 +73,7 @@ for(i in 1:length(Results_List)){
                   theme(axis.title.x = element_text(size = 18)) + theme(plot.subtitle=element_text(hjust=0.5, size= 25, face="bold")) +
                   theme(legend.position = c("top"), legend.direction = "horizontal") + theme(axis.title.x = element_text(size=18), legend.spacing.x = unit(0.6, 'cm')) +
                   ggh4x::facet_grid2(Allele~Direction, scales = "free", independent = "x")  + theme(strip.text = element_text(size = 20)) + theme(legend.position = "none") + 
-                  ggtitle("(B) Plot of Prediction Estimates from 20 Simulated Datasets"))
+                  ggtitle("(B) Plot of Parameter Estimates from 20 Simulated Datasets"))
         dev.off() 
     }
 }

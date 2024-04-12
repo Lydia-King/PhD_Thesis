@@ -5,6 +5,7 @@ source("Chapter5_Simulation_Study_Functions.R")
 
 ## Load up Libraries 
 library(gt)
+library(tidyverse)
 
 ## Load up datasets 
 Multiple_Dataset_Scen <- readRDS(file = "../../data/Chapter_5/Simulation_Study_Data.rds")
@@ -26,10 +27,10 @@ Uni_lm_7_2  <- Uni_lm_7_2 %>% filter(Allele == "Major", Category == "Amp/Del", D
 ## Get Table 
 Uni_lm_7_1 |>
     select(-c(Chr)) |> select(id, Category, Allele, Direction, Samplesize, Pred, LB, UB) |> 
-    rename(n = Samplesize, Dir = Direction, Dataset = id) |>
+    rename(n = Samplesize, Dir = Direction, Dataset = id, Fit = Pred) |>
     gt() |>
     tab_header(
-        title =  md("**(A) Univariate TS Model Estimates**")
+        title =  md("**(A) Univariate TS Parameter Estimates**")
     )  |>
     tab_style(
         style = cell_borders(
@@ -54,10 +55,10 @@ Uni_lm_7_1 |>
 
 Uni_lm_7_2 |>
     select(-c(Chr)) |> select(id, Category, Allele, Direction, Samplesize, Pred, LB, UB) |> 
-    rename(n = Samplesize, Dir = Direction, Dataset = id) |>
+    rename(n = Samplesize, Dir = Direction, Dataset = id, Fit = Pred) |>
     gt() |>
     tab_header(
-        title =  md("**(B) Univariate TE Model Estimates**")
+        title =  md("**(B) Univariate TE Parameter Estimates**")
     )  |>
     tab_style(
         style = cell_borders(
