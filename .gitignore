@@ -1,0 +1,16 @@
+# Ignore
+data/ASCAT_Data/
+tex/*
+*.Rhistory 
+figures/Chapter_2/ChrArm_DensityPlots/
+diff_tex/
+supplementary_information/*
+R/Data_Cleaning/CNA_File_Chr_Redone.txt
+R/Data_Cleaning/table.txt
+
+# Do not ignore
+!tex/*.tex
+!tex/*.bib
+!diff_tex/PhD_Thesis_diff.pdf!.gitignore
+!supplementary_information/PhD_Thesis_Supp.pdf
+!supplementary_information/*./DG_Genes
