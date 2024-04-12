@@ -1,4 +1,4 @@
-%\captionsetup[subfigure]{font={bf, small}, skip=1pt, margin=7.2cm, singlelinecheck=false}
+\captionsetup[subfigure]{font={bf, small}, skip=1pt, margin=7.2cm, singlelinecheck=false}
 
 \section{Modelling Allele-Specific Copy Number Associated Changepoints}
 CNAs in cancer have been extensively studied, however due to the complexity of cancer genomes, such as frequent deviations from diploidy and the presence of both tumour and non-tumour cells, many studies have been limited to reporting total CNAs across the genome. Total copy number profiling estimates the sum of the copy numbers of the two homologous chromosomes and as such only provides aggregate information. Determining the copy number landscape of each homologous chromosome, i.e. allele-specific copy number profiling, is important for the characterisation of certain types of genomic aberrations within tumour genomes, such as copy neutral loss of heterozygosity and the inference of their clonal history \citep{pmid20837533, pmid25477383}.  
@@ -10,7 +10,7 @@ A wide range of software is available facilitating measurement of allele-specifi
 
 The ASCAT algorithm was applied first in \cite{pmid20837533}, to produce genome-wide allele-specific copy number profiles (ASCAT profiles) for 91/112 breast carcinoma samples genotyped on Illumina 109K SNP arrays. The paper reported that both the estimated percentages of aberrant cells and tumour ploidy were significantly different across the breast cancer subtypes, with the Luminal A subtype displaying the highest percentage of aberrant tumour cells and lowest ploidy. The frequency of gains and losses observed across the genome closely matched with previously reported patterns, but when stratifying by molecular subtype higher frequencies of gains and losses were observed in HER2 and Normal-like subtypes than reported previously. LOH was most frequently observed on chromosome arms 8p, 11q, 16q, and 17p, while copy number-neutral events were observed across the genome with a frequency of 20\% or higher. In addition, genomic regions with higher frequencies of losses were more likely to contain copy number-neutral events, this was particularly evident on chromosomes 1p, 2, 3, 4q, 9q, 15, and 19p.
 
-As discussed in Section \ref{CARMA}, \cite{pmid32242091} utilised allele-specific copy number profiles, generated using ASCAT, to produce six metrics, AMP, DEL, STP, CRV, LOH, and ASM. The AMP, DEL, STP and CRV metrics were calculated using the sum of the allele-specific copy number, and all six metrics were combined into two prognostic indices, CPI and $\text{CPI}_\text{weighted}$. Notably, combining the metrics into a single index results in loss of valuable information, specifically the type of CNA observed and which allele the CNA is observed on. Other studies utilising ASCAT include \cite{pmid26205786, pmid27161491, pmid35705804, pmid36806386} and \cite{pmid36944408}. 
+As discussed in Section \ref{CARMA}, \cite{pmid32242091} utilised allele-specific copy number profiles, generated using ASCAT, to produce six metrics: AMP, DEL, STP, CRV, LOH, and ASM. The AMP, DEL, STP and CRV metrics were calculated using the sum of the allele-specific copy number, and all six metrics were combined into two prognostic indices, CPI and $\text{CPI}_\text{weighted}$. Notably, combining the metrics into a single index results in loss of valuable information, specifically the type of CNA observed and which allele the CNA is observed on. Other studies utilising ASCAT include \cite{pmid26205786, pmid27161491, pmid35705804, pmid36806386} and \cite{pmid36944408}. 
 
 \subsection{Generation of Allele-specific Copy Number Profiles for METABRIC Patients}
 To produce allele-specific copy number profiles from Affymetrix SNP 6.0 arrays, preprocessing using PennCNV (v1.0.5), a software tool to detect any form of copy number variation, is applied to generate signal intensity files, followed by ASCAT (v3.0.0), allele-specific copy number calling on these signal intensity files.
@@ -54,7 +54,7 @@ ASCAT, applicable to Illumina SNP arrays, Affymetrix SNP arrays and high-through
 
 ASCAT can be run in a number of different ways such as with or without matched normals or with or without a logR correction step. The ASCAT pipeline implemented here is for Affymetrix Genome-Wide Human SNP Array 6.0 CEL files, without matched normals, with a logR correction (GC content and replication timing) and where all samples are from females, adapted from the \texttt{ASCAT\_fromCELfiles.R} script available on GitHub. Implementing this pipeline 1,984 ASCAT profiles were generated from 1,992 samples. 
 
-Outputs obtained from the ASCAT pipeline include a dataframe containing the copy number segments of each sample, an example of which is provided in Table \ref{tab:ASCAT}, allele-specific copy number profiles for each sample (Figure \ref{fig:s1}), together with quality control metrics from ASCAT profiles including information on the purity and ploidy of each sample. Table \ref{tab:PennCNV} shows the copy numbers for each allele, nMajor and nMinor, which take on values 0 (indicating deletion), 1 (indicating normal copy number of allele), or any positive whole number greater than 1 (indicating increasing levels of amplifications). In Figure \ref{fig:s1} the Minor and Major allele are coloured blue and red, respectively. The allele-specific copy number profile illustrated in Figure \ref{fig:s1}A, observed for sample MB.0000, provides an example of a tumour sample that has very little GI, as very few chromosomes contain CNAs, samples such as this are labelled as “non-aberrant”. The allele-specific copy number profile observed for sample MB.0025 provides an example of a tumour sample with moderate GI (Figure \ref{fig:s1}B). In the observed sample, some chromosomes contain no CNAs (chromosomes 4, 9 and 13), while others contain numerous CNAs (chromosomes 1, 3, 17). The amplification and deletion observed separately on chromosome 3 are examples of genomic aberrations that would not be detected in total CNA data, as the total copy number is 2. The allele-specific copy number profile observed for sample MB.0062 provides an example of a tumour sample with widespread GI, the majority of chromosomes contain at least one CNA and there are high levels of fluctuations between the CNA states (Figure \ref{fig:s1}C).
+Outputs obtained from the ASCAT pipeline include a dataframe containing the copy number segments of each sample, an example of which is provided in Table \ref{tab:ASCAT}, allele-specific copy number profiles for each sample (Figure \ref{fig:s1}), together with quality control metrics from ASCAT profiles including information on the purity and ploidy of each sample. Table \ref{tab:PennCNV} shows the copy numbers for each allele, nMajor and nMinor, which take on values 0 (indicating deletion), 1 (indicating normal copy number of allele), or any positive whole number greater than 1 (indicating increasing levels of amplifications). In Figure \ref{fig:s1} the Minor and Major allele are coloured blue and red, respectively. The allele-specific copy number profile illustrated in Figure \ref{fig:s1}A, observed for sample MB.0000, provides an example of a tumour sample that has very little GI, as very few chromosomes contain CNAs. Samples such as this are labelled as “non-aberrant”. The allele-specific copy number profile observed for sample MB.0025 provides an example of a tumour sample with moderate GI (Figure \ref{fig:s1}B). In the observed sample, some chromosomes contain no CNAs (chromosomes 4, 9 and 13), while others contain numerous CNAs (chromosomes 1, 3, 17). The amplification and deletion observed separately on chromosome 3 are examples of genomic aberrations that would not be detected in total CNA data, as the total copy number is 2. The allele-specific copy number profile observed for sample MB.0062 provides an example of a tumour sample with widespread GI, the majority of chromosomes contain at least one CNA and there are high levels of fluctuations between the CNA states (Figure \ref{fig:s1}C).
 
 \begin{figure}[!h]
 \vspace{0.3cm}
@@ -104,7 +104,7 @@ MB.0000 & 8 & 51634751 & 146298155 &     1 &     1 &     1 &     1 \\
 \end{table}
 
 \subsection{Classification of Changepoints in Allele-specific CNA Profiles}
-Our aim here is to model the allele-specific copy number profile across the genome by modelling features of common changes in the profile by detection of changepoints, also known as breakpoints, in the allele-specific CNA profiles. We define a copy number changepoint as a point along a chromosome, corresponding to an individual allele, where there is a change in copy number, i.e. if there is a copy number change from 2 to 0, there exists a point along that chromosome where the change has occurred (Figure \ref{fig:MockASCAT_1}). Figure \ref{fig:MockASCAT_1}, an annotated allele-specific profile, displays the different copy number states, Neutral (N) for a copy number of 1, Deletion (D) for a copy number of 0 and Amplification (A) for a copy number of 2. This figure highlights a copy number changepoint (CP) where the CNA state has gone from A to D. Based on the copy number either side of the changepoint we categorise each changepoint as either Neut/Amp (1 to 2), Neut/Del (1 to 0), Amp/Neut (2 to 1), Del/Neut (0 to 1), Amp/Del (2 to 0) or Del/Amp (0 to 2). Where no changepoint occurs, the category is labelled NoChangepoint. The detection of changepoints is based on length of the alteration segment to the left of the changepoint (TS) and the length of the alteration segment to the right of the changepoint (TE). For each copy number changepoint, for each sample, we record the changepoint location (chromosome, genomic position and allele), the $TS$ and $TE$ lengths, and the assigned category (Table \ref{ReformattedData}). In the case where there is a gap between the segments, and as such between the copy number changes, the midpoint of the segment is used as the changepoint. Summary statistics of the $TS$ and $TE$ lengths for each category in the ASCAT data are shown in Tables \ref{tbl:excel-table1} and \ref{tbl:excel-table2}. 
+Our aim here is to model the allele-specific copy number profile across the genome by modelling features of common changes in the profile by detection of changepoints, also known as breakpoints, in the allele-specific CNA profiles. We define a copy number changepoint as a point along a chromosome, corresponding to an individual allele, where there is a change in copy number, i.e. if there is a copy number change from 2 to 0, there exists a point along that chromosome where the change has occurred (Figure \ref{fig:MockASCAT_1}). Figure \ref{fig:MockASCAT_1}, an annotated allele-specific profile, displays the different copy number states, Neutral (N) for a copy number of 1, Deletion (D) for a copy number of 0 and Amplification (A) for a copy number of 2. This figure highlights a copy number changepoint (CP) where the CNA state has gone from A to D. Based on the copy number either side of the changepoint we categorise each changepoint as either Neut/Amp (1 to 2), Neut/Del (1 to 0), Amp/Neut (2 to 1), Del/Neut (0 to 1), Amp/Del (2 to 0) or Del/Amp (0 to 2). Where no changepoint occurs, the category is labelled NoChangepoint. The detection of changepoints is based on length of the alteration segment to the left of the changepoint ($TS$) and the length of the alteration segment to the right of the changepoint ($TE$). For each copy number changepoint, for each sample, we record the changepoint location (chromosome, genomic position and allele), the $TS$ and $TE$ lengths, and the assigned category (Table \ref{ReformattedData}). In the case where there is a gap between the segments, and as such between the copy number changes, the midpoint of the segment is used as the genomic position of the changepoint. Summary statistics of the $TS$ and $TE$ lengths for each category in the ASCAT data are shown in Tables \ref{tbl:excel-table1} and \ref{tbl:excel-table2}. 
 
 \begin{figure}[!ht]
 \center
@@ -278,11 +278,11 @@ Table \ref{tab:Model_Example}A provides a snapshot of simulated data values wher
 \vfill 
 \clearpage
 
-Fitting the univariate AIIM to the data, using the \texttt{lm()} function, produces model parameter estimates, provided in Table \ref{tbl:lm_uni_1_model}A. Table \ref{tbl:lm_uni_1_pred}A and Figure \ref{fig:lm_uni_1_int}A summarise interval estimates for these parameters. Table \ref{tbl:lm_uni_1_pred}A shows agreement between the parameter estimates and the mean lengths of the $TS$ and $TE$ recorded in Table \ref{tab:three_tables} across all categories, indicating that our fitted models are estimating the parameters as intended. The parameter estimates and confidence intervals demonstrate that the mean lengths of $TS$ for the Del/Neut and Amp/Del categories and the mean lengths of the $TE$ for the Neut/Del, Neut/Amp and Amp/Del categories are all significantly greater than 0. Tables \ref{tbl:lm_uni_1_model}B, \ref{tbl:lm_uni_1_pred}B and Figure \ref{fig:lm_uni_1_int}B provide the model parameter and interval estimates produced using the dataset where the lengths of the neutral segments are retained as length greater than 0. The parameter estimates and confidence intervals demonstrate that the mean lengths of $TS$ and $TE$ for all categories, excluding the NoChangepoint category, are estimated to be significantly different from 0 (Table \ref{tbl:lm_uni_1_pred}B and Figure \ref{fig:lm_uni_1_int}B). Retaining the lengths of the neutral segments, which are often extremely variable in length, results in an increased variance within the dataset, leading to wider, less precise, interval estimates for all categories. Although these intervals are wider, it is important to note that apart from the detection of the neutral segments, the conclusions do not change, i.e. the categories detected as having mean length(s) significantly greater than 0 are the same. 
+Fitting the univariate AIIM to the data, using the \texttt{lm()} function, produces model parameter estimates provided in Table \ref{tbl:lm_uni_1_model}A. Table \ref{tbl:lm_uni_1_pred}A and Figure \ref{fig:lm_uni_1_int}A summarise interval estimates for these parameters. Table \ref{tbl:lm_uni_1_pred}A shows agreement between the parameter estimates and the mean lengths of the $TS$ and $TE$ recorded in Table \ref{tab:three_tables} across all categories, indicating that our fitted models are estimating the parameters as intended. The parameter estimates and confidence intervals demonstrate that the mean lengths of $TS$ for the Del/Neut and Amp/Del categories and the mean lengths of the $TE$ for the Neut/Del, Neut/Amp and Amp/Del categories are all significantly greater than 0. Tables \ref{tbl:lm_uni_1_model}B, \ref{tbl:lm_uni_1_pred}B and Figure \ref{fig:lm_uni_1_int}B provide the model parameter and interval estimates produced using the dataset where the lengths of the neutral segments are retained as length greater than 0. The parameter estimates and confidence intervals demonstrate that the mean lengths of $TS$ and $TE$ for all categories, excluding the NoChangepoint category, are estimated to be significantly different from 0 (Table \ref{tbl:lm_uni_1_pred}B and Figure \ref{fig:lm_uni_1_int}B). Retaining the lengths of the neutral segments, which are often extremely variable in length, results in an increased variance within the dataset, leading to wider, less precise, interval estimates for all categories. Although these intervals are wider, it is important to note that apart from the detection of the neutral segments, the conclusions do not change, i.e. the categories detected as having mean length(s) significantly greater than 0 are the same. 
 
 \vfill 
 \begin{table}[!htb]
-    \caption[Univariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm()} function.]{Univariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm()} function. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
+    \caption[Univariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm()}.]{Univariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm()}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
     \label{tbl:lm_uni_1_model}
      \begin{subtable}[t]{.49\textwidth}
       \centering
@@ -298,7 +298,7 @@ Fitting the univariate AIIM to the data, using the \texttt{lm()} function, produ
 \clearpage
 
 \begin{table}[!htb]
-    \caption[Univariate Allele-Independent Intercept Model parameter estimates and intervals fitted using \texttt{lm()} function.]{Univariate Allele-Independent Intercept Model parameter estimates and intervals fitted using \texttt{lm()} function. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
+    \caption[Univariate Allele-Independent Intercept Model parameter estimates and intervals fitted using \texttt{lm()}.]{Univariate Allele-Independent Intercept Model parameter estimates and intervals fitted using \texttt{lm()}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
     \label{tbl:lm_uni_1_pred}
      \begin{subtable}[t]{.49\textwidth}
       \centering
@@ -321,7 +321,7 @@ Fitting the univariate AIIM to the data, using the \texttt{lm()} function, produ
       \centering
        \includegraphics[width = 1\textwidth]{../figures/Chapter_5/Univariate_lm_7_Neut_AI_Interval.png}
     \end{subfigure} 
-     \caption[Interval plot of univariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm()} function.]{Interval plot of univariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm} function. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
+     \caption[Interval plot of univariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm()}.]{Interval plot of univariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
      \label{fig:lm_uni_1_int}
 \end{figure}
 
@@ -334,7 +334,7 @@ The results obtained for the univariate AIIM and AINIM, fitted using the \texttt
 \vfill 
 \begin{table}[H]
 \vspace{0.8cm}
-    \caption[Univariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()}.]{Univariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()} function. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
+    \caption[Univariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()}.]{Univariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
     \label{tbl:lm_uni_2_model}
      \begin{subtable}[t]{.49\textwidth}
       \centering
@@ -349,7 +349,7 @@ The results obtained for the univariate AIIM and AINIM, fitted using the \texttt
 
 \begin{table}[H]
 \vspace{0.5cm}
-    \caption[Univariate Allele-Independent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()} function.]{Univariate Allele-Independent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()} function. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
+    \caption[Univariate Allele-Independent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()}.]{Univariate Allele-Independent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
     \label{tbl:lm_uni_2_pred}
      \begin{subtable}[t]{.49\textwidth}
       \centering
@@ -372,7 +372,7 @@ The results obtained for the univariate AIIM and AINIM, fitted using the \texttt
       \centering
        \includegraphics[width = 1\textwidth]{../figures/Chapter_5/Univariate_lm_6_Neut_AI_Interval.png}
     \end{subfigure} 
-     \caption[Interval plot of univariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()} function.]{Interval plot of univariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()} function. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
+     \caption[Interval plot of univariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()}.]{Interval plot of univariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
      \label{fig:lm_uni_2_int}
 \end{figure}
 \vfill 
@@ -385,11 +385,11 @@ The \texttt{MCMCglmm()} function overcomes this limitation, and produces similar
 
 Overall, when comparing model fits where the neutral segment lengths are retained as greater than 0 and where the neutral segment lengths recorded as 0, there is increased detection of the changepoints with a neutral length and an increase in the width of the confidence intervals. Although these intervals are wider, it is important to note that apart from the detection of the neutral segments, the conclusions do not change, i.e. the categories detected as having mean length(s) significantly greater than 0 are the same in both instances. As the primary interest here is in CNA changepoints, focus is given to the dataset where the neutral segment lengths are recorded as 0.  
 
-Notably, the \texttt{lm()} and \texttt{MCMCglmm()} functions perform similarly across the univariate AI models, but limitations in the \texttt{lm()} and \texttt{predict()} functions result in only the \texttt{MCMCglmm()} function being capable of producing confidence intervals for multivariate models.
+Notably, the \texttt{lm()} and \texttt{MCMCglmm()} functions perform similarly across the univariate AI models, but limitations in the \texttt{predict()} functions result in only the \texttt{predict.MCMCglmm()} function being capable of producing confidence intervals for multivariate models.
 
 \vspace{1cm}
 \begin{table}[H]
-    \caption[Multivariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm()} function.]{Multivariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm()} function. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
+    \caption[Multivariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm()}.]{Multivariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm()}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
     \label{tbl:lm_multi_1_model}
      \begin{subtable}[t]{.49\textwidth}
       \centering
@@ -404,7 +404,7 @@ Notably, the \texttt{lm()} and \texttt{MCMCglmm()} functions perform similarly a
 
 \vfill 
 \begin{table}[H]
-    \caption[Multivariate Allele-Independent Intercept Model parameter estimates and intervals fitted using \texttt{lm} function.]{Multivariate Allele-Independent Intercept Model parameter estimates and intervals fitted using \texttt{lm} function. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
+    \caption[Multivariate Allele-Independent Intercept Model parameter estimates and intervals fitted using \texttt{lm()}.]{Multivariate Allele-Independent Intercept Model parameter estimates and intervals fitted using \texttt{lm()}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
     \label{tbl:lm_multi_1_pred}
      \begin{subtable}[t]{.49\textwidth}
       \centering
@@ -427,13 +427,13 @@ Notably, the \texttt{lm()} and \texttt{MCMCglmm()} functions perform similarly a
       \centering
        \includegraphics[width = 1\textwidth]{../figures/Chapter_5/Multivariate_lm_7_Neut_AI_Interval.png}
     \end{subfigure} 
-     \caption[Plot of multivariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm} function.]{Plot of multivariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm} function. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
+     \caption[Plot of multivariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm()}.]{Plot of multivariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{lm()}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
      \label{fig:lm_multi_1_int}
 \end{figure}
 
 \begin{table}[H]
 \vspace{1cm}
-    \caption[Multivariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()} function.]{Multivariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()} function. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
+    \caption[Multivariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()}.]{Multivariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
     \label{tbl:lm_multi_2_model}
      \begin{subtable}[t]{.49\textwidth}
       \centering
@@ -448,7 +448,7 @@ Notably, the \texttt{lm()} and \texttt{MCMCglmm()} functions perform similarly a
 \vfill 
 
 \begin{table}[H]
-    \caption[Multivariate Allele-Independent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm} function.]{Multivariate Allele-Independent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm} function. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
+    \caption[Multivariate Allele-Independent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()}.]{Multivariate Allele-Independent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
     \label{tbl:lm_multi_2_pred}
      \begin{subtable}[t]{.49\textwidth}
       \centering
@@ -471,7 +471,7 @@ Notably, the \texttt{lm()} and \texttt{MCMCglmm()} functions perform similarly a
       \centering
        \includegraphics[width = 1\textwidth]{../figures/Chapter_5/Multivariate_lm_6_Neut_AI_Interval.png}
     \end{subfigure} 
-     \caption[Plot of multivariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()} function.]{Plot of multivariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()} function. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
+     \caption[Plot of multivariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()}.]{Plot of multivariate Allele-Independent Non-Intercept Model parameter estimates fitted using \texttt{lm()}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
      \label{fig:lm_multi_2_int}
 \end{figure}
 
@@ -519,7 +519,7 @@ Applying univariate ADIMs, for the two responses $TS$ and $TE$, provides model p
 
 \begin{table}[H]
 \centering
-\caption[Univariate Allele-Dependent Intercept Model parameter estimates and intervals fitted using \texttt{lm()} function.]{Univariate Allele-Dependent Intercept Model estimates and intervals fitted using \texttt{lm()} function and where neutral lengths are recorded as 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
+\caption[Univariate Allele-Dependent Intercept Model parameter estimates and intervals fitted using \texttt{lm()}.]{Univariate Allele-Dependent Intercept Model estimates and intervals fitted using \texttt{lm()} and where neutral lengths are recorded as 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
       
 \includegraphics[width = 1\textwidth]{../tables/Chapter_5/Univariate_lm_7_AD_Model_Pred.png}
 \label{tab:lm_uni_AD_modpred}
@@ -529,7 +529,7 @@ Applying univariate ADIMs, for the two responses $TS$ and $TE$, provides model p
 \centering
 \includegraphics[width = 0.8\textwidth]{../figures/Chapter_5/Univariate_lm_7_AD_Interval.png}
  
-\caption[Interval plot of univariate Allele-Dependent Intercept Model parameter estimates fitted using \texttt{lm()} function.]{Interval plot of univariate Allele-Dependent Intercept Model parameter estimates fitted using \texttt{lm()} function and where neutral lengths are recorded as 0.}
+\caption[Interval plot of univariate Allele-Dependent Intercept Model parameter estimates fitted using \texttt{lm()}.]{Interval plot of univariate Allele-Dependent Intercept Model parameter estimates fitted using \texttt{lm()} and where neutral lengths are recorded as 0.}
 \label{fig:lm_uni_AD_modpred}
 \end{figure}
 
@@ -540,7 +540,7 @@ Applying univariate ADNIMs, for the two responses $TS$ and $TE$, provides model 
 \vfill 
 \begin{table}[H]
 \centering
-\caption[Univariate Allele-Dependent Non-Intercept Model estimates and intervals fitted using \texttt{lm()} function.]{Univariate Allele-Dependent Non-Intercept Model estimates and intervals fitted using \texttt{lm()} function and where neutral lengths are recorded as 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
+\caption[Univariate Allele-Dependent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()}.]{Univariate Allele-Dependent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()} and where neutral lengths are recorded as 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
       
 \includegraphics[width = 1\textwidth]{../tables/Chapter_5/Univariate_lm_6_AD_Model_Pred.png}
 \label{tab:lm_uni_AD_modpred_6}
@@ -550,7 +550,7 @@ Applying univariate ADNIMs, for the two responses $TS$ and $TE$, provides model 
 \centering
 \includegraphics[width = 0.80\textwidth]{../figures/Chapter_5/Univariate_lm_6_AD_Interval.png}
  
-\caption[Interval plot of univariate Allele-Dependent Non-Intercept Model parameter estimates fitted using \texttt{lm()} function.]{Interval plot of univariate Allele-Dependent Non-Intercept Model parameter estimates fitted using \texttt{lm()} function and where neutral lengths are recorded as 0.}
+\caption[Interval plot of univariate Allele-Dependent Non-Intercept Model parameter estimates fitted using \texttt{lm()}.]{Interval plot of univariate Allele-Dependent Non-Intercept Model parameter estimates fitted using \texttt{lm()} and where neutral lengths are recorded as 0.}
 \label{fig:lm_uni_AD_modpred_6}
 \end{figure}
 \vfill 
@@ -563,7 +563,7 @@ Overall, these models indicate that there is minimal difference in the categorie
 \vfill 
 \begin{table}[!h]
 \centering
-\caption[Multivariate Allele-Dependent Intercept Model parameter estimates and intervals fitted using \texttt{lm()} function.]{Multivariate Allele-Dependent Intercept Model parameter estimates and intervals fitted using \texttt{lm()} function and where neutral lengths are recorded as 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
+\caption[Multivariate Allele-Dependent Intercept Model parameter parameter estimates and intervals fitted using \texttt{lm()}.]{Multivariate Allele-Dependent Intercept Model parameter estimates and intervals fitted using \texttt{lm()} and where neutral lengths are recorded as 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
       
 \includegraphics[width = 1\textwidth]{../tables/Chapter_5/Multivariate_lm_7_AD_Model_Pred.png}
 \label{tab:lm_multi_AD_modpred}
@@ -574,13 +574,13 @@ Overall, these models indicate that there is minimal difference in the categorie
 \centering
 \includegraphics[width = 0.8\textwidth]{../figures/Chapter_5/Multivariate_lm_7_AD_Interval.png}
  
-\caption[Plot of multivariate Allele-Dependent Intercept Model parameter estimates fitted using \texttt{lm()} function.]{Plot of multivariate Allele-Dependent Intercept Model parameter estimates fitted using \texttt{lm()} function and where neutral lengths are recorded as 0. }
+\caption[Plot of multivariate Allele-Dependent Intercept Model parameter estimates fitted using \texttt{lm()}.]{Plot of multivariate Allele-Dependent Intercept Model parameter estimates fitted using \texttt{lm()} and where neutral lengths are recorded as 0. }
 \label{fig:lm_multi_AD_modpred}
 \end{figure}
 
 \begin{table}[!h]
 \centering
-\caption[Multivariate Allele-Dependent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()} function.]{Multivariate Allele-Dependent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()} function and where neutral lengths are recorded as length 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
+\caption[Multivariate Allele-Dependent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()}.]{Multivariate Allele-Dependent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()} and where neutral lengths are recorded as length 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
 
 \includegraphics[width = 1\textwidth]{../tables/Chapter_5/Multivariate_lm_6_AD_Model_Pred.png}
 \label{tab:lm_multi_AD_modpred_6}
@@ -591,7 +591,7 @@ Overall, these models indicate that there is minimal difference in the categorie
 \centering
 \includegraphics[width = 0.8\textwidth]{../figures/Chapter_5/Multivariate_lm_6_AD_Interval.png}
  
-\caption[Plot of multivariate Allele-Dependent Non-Intercept Model parameter estimates fitted using \texttt{lm()} function.]{Plot of multivariate Allele-Dependent Non-Intercept Model parameter estimates fitted using \texttt{lm()} function and where neutral lengths are recorded as 0.}
+\caption[Plot of multivariate Allele-Dependent Non-Intercept Model parameter estimates fitted using \texttt{lm()}.]{Plot of multivariate Allele-Dependent Non-Intercept Model parameter estimates fitted using \texttt{lm()} and where neutral lengths are recorded as 0.}
 \label{fig:lm_multi_AD_modpred_6}
 \end{figure} 
 
@@ -602,7 +602,7 @@ To explore the behaviour of the proposed AD models, a variety of scenarios are s
 Scenario 1 assigns:
 \begin{itemize}
 \item a percentage of samples to have one of the two alleles displaying an amplified segment within the observed region (CNA profile B), and 
-\item a percentage of samples to  have no CNAs, i.e., no changepoints, in the observed region, for both alleles (CNA profile A). 
+\item a percentage of samples to  have no CNAs, i.e. no changepoints, in the observed region, for both alleles (CNA profile A). 
 \end{itemize}
 
 Scenario 2 assigns:
@@ -615,10 +615,10 @@ Scenario 3 assigns:
 \begin{itemize}
 \item a percentage of samples to have allele-specific copy number profile D, where one allele displays an Amp/Del flashpoint pattern flanked by two neutral segments and the other allele displays an oscillating pattern of deleted and neutral segments,
 \item a percentage of samples to have one of the two alleles displaying an amplified segment followed by a deleted segment (Amp/Del flashpoint pattern), within the observed region (CNA profile C), and 
-\item a percentage of samples to have no CNAs, i.e., no changepoints, in the observed region, for both alleles (CNA profile A). 
+\item a percentage of samples to have no CNAs, i.e. no changepoints, in the observed region, for both alleles (CNA profile A). 
 \end{itemize}
 
-In setting parameters to generate the profiles, we assume a region similar in length to chromosome 1 ($\approx 250,000$ kb) as the genomic region. Lengths are generated from truncated Normal distributions, mean lengths of CNA segments are similar to those observed in the ASCAT data (Tables \ref{tbl:excel-table1} and \ref{tbl:excel-table2}), as specified in Table \ref{tab:Param}.
+In setting parameters to generate the profiles, we assume a region similar in length to chromosome 1 ($\approx 250,000$kb) as the genomic region. Lengths are generated from truncated Normal distributions, mean lengths of CNA segments are similar to those observed in the ASCAT data (Tables \ref{tbl:excel-table1} and \ref{tbl:excel-table2}), as specified in Table \ref{tab:Param}.
 
 \begin{table}[!htb]
 \vspace{0.5cm}
@@ -630,7 +630,9 @@ In setting parameters to generate the profiles, we assume a region similar in le
 
 For scenario 1, datasets are generated varying the size of the dataset, n, ranging from 20 to 500, and varying the percentage of the dataset having a CNA, $P$, ranging from 20\% to 90\% of samples displaying allele-specific copy number profile B. For each specification, 20 replicated datasets were simulated. Scenario 2 consists of allele-specific copy number profiles B and C, at varying percentages $P$ and $1-P$, each with 20 replications. For scenario 3, three possible allele-specific copy number profiles, A, C and D, setting the percentage of samples displaying profile A at $P = 20\%$ and with varying percentages of samples displaying allele-specific copy number profile C and D, $P_1$ and $P_2$, each with 20 replications, are generated. In all datasets the lengths of the neutral segments are recorded as length 0 and the NoChangepoint category is retained. 
 
-\begin{figure}[H]
+Univariate and multivariate AD models (ADIM) are fitted to all simulated datasets and assessed. An illustration of the distribution of point estimates across the replicated datasets, for example in simulated scenario 1, is provided in Figures \ref{fig:DP_1}-\ref{fig:DP_2}. The $TS$ and $TE$ point estimates for each category and allele, over the 20 replications, indicate the variability in simulated datasets and that lengths simulated as 0 are observed to have points estimates around 0.
+
+\begin{figure}[!ht]
 \vspace{0.5cm}
      \begin{subfigure}[t]{.49\textwidth}
       \centering
@@ -644,7 +646,7 @@ For scenario 1, datasets are generated varying the size of the dataset, n, rangi
      \label{fig:DP_1}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!ht]
 \vspace{0.5cm}
      \begin{subfigure}[t]{.49\textwidth}
       \centering
@@ -658,15 +660,13 @@ For scenario 1, datasets are generated varying the size of the dataset, n, rangi
      \label{fig:DP_2}
 \end{figure}
 
-Univariate and multivariate AD models (ADIM) are fitted to all simulated datasets and assessed. An illustration of the distribution of point estimates across the replicated datasets, for example in simulated scenario 1, is provided in Figures \ref{fig:DP_1}-\ref{fig:DP_2}. The $TS$ and $TE$ point estimates for each category and allele, over the 20 replications, indicate the variability in simulated datasets and that lengths simulated as 0 are observed to have points estimates around 0.
-
 The significance of a changepoint category is assessed based on the confidence interval of the parameter being strictly positive, i.e. the value of the lower bound of the interval, $LB > 0$. The proportion of datasets observed to indicate significance of that parameter when fitted with univariate \texttt{lm()} and univariate \texttt{MCMCglmm()} are provided in Figure \ref{fig:Uni_lm_SimStudy} and Figure \ref{fig:Uni_mcmc_SimStudy}, respectively. For scenario 1, the categories with simulated $TS$ length, Amp/Neut, and $TE$ length, Neut/Amp, are detected consistently on the Major allele across all simulated sample sizes and profile percentages. For scenario 2, with more categories and complex structure, more variability is observed but as the sample size increases the effect of this variability decreases and the types of changepoints simulated in the scenario are detected as significant. Similarly for the complexity of scenario 3, the $TS$ Amp/Del and Del/Neut and $TE$ Amp/Del and Neut/Amp on the Major allele, and the $TS$ Del/Neut and $TE$ Neut/Del on the Minor allele, are consistently detected across all sample sizes and profile percentages. 
 
 Fits produced from the multivariate AD models, using the \texttt{MCMCglmm()} function produces similar results to the univariate models and shows that as the sample size increases, the types of changepoints simulated in the scenario are detected as significant (Figure \ref{fig:Multi_mcmc_SimStudy}).
 
 In the multivariate MCMCglmm fit of ADIM, we observe decreased True Positive rate for smaller sample sizes, evident in particular for scenario 2. Taking a closer look at individual datasets in scenario 2 reveals that for sample size $n = 20$, where 90\% of samples display copy number profile C, the Amp/Neut category occurs only twice and as such the $TS$ is not detected in approximately 35\% of datasets (Table \ref{tbl:Individual_1}). In addition, where 10\% of samples display copy number profile C, the Amp/Del category appears only twice and the $TE$ is not detected in approximately 55\% of datasets (Table \ref{tbl:Individual_1}). This indicates that the variability is due to the small sample size and decreased profile percentages of those specific categories. 
 
-Overall, it appears that for the majority of categories and scenarios, as the profile percentage or sample size increases, the detection of each category simulated goes to 1. Notably, by using intervals to assess significance, we can also identify regions where changepoints over a certain length occur, i.e. over $1,000$ kb. This is done by checking whether the lower bound of the confidence interval is greater than 1,000 ($LB > 1000$).
+Overall, it appears that for the majority of categories and scenarios, as the profile percentage or sample size increases, the detection of each category simulated goes to 1. Notably, by using intervals to assess significance, we can also identify regions where changepoints over a certain length occur, i.e. over $1,000$kb. This is done by checking whether the lower bound of the confidence interval is greater than 1,000 ($LB > 1000$).
 
 \vfill 
 \begin{figure}[!htb]
