@@ -358,7 +358,7 @@ Figure \ref{fig:Score_Comp_Dense} and Table \ref{table:CNAScoreT1} indicate that
 
 \begin{table}[h]
     \begin{minipage}{.49\linewidth}
-    \caption[The percentage overlap between the global complete-case and all-case CNA Score metric densities]{
+    \caption[The percentage overlap between the global complete-case and all-case CNA Score metric densities.]{
     The percentage overlap between the global complete-case and all-case CNA Score metric densities.
     Metrics are ordered and coloured by percentage overlap.}
       \centering 
@@ -412,7 +412,7 @@ Similarly, the observed distributions for the chromosome arm CNA metrics are ins
 
 Figures \ref{SurvTrees_Score_HM_CCA}-\ref{SurvTrees_Burden_HM} also highlight previously documented patterns of CNAs in breast cancer, including high levels of amplifications on chromosome 1q, 8q and 16p and high levels of deletions on 8p, 16q and 17p \citep{pmid20576095, pmid22522925}. Similar to the global CNA Score and Burden metrics, it appears that deletions are more widespread across the genome, affecting greater numbers of chromosomes, than amplifications. 
 
-Rather than extensively presenting details of distributions for each of the 42 chromosome arms, we select chromosome arm 1q for more detailed illustration and discussion (see Supplementary Information for remaining chromosome arms). Chromosome arm 1q is frequently altered in breast cancer and shows interesting features in this analysis. The summary statistics (Tables \ref{tab:Score_All_Chr1q}-\ref{tab:Burden_CCA_Chr1q}) and distributions (Figures \ref{fig:Score_Comp_Dense_Chr1q} and \ref{fig:Burden_Comp_Dense_Chr1q}) indicate that the copy number landscape of chromosome 1q is dominated by amplifications, median CNA Score values 0 and 954 and median CNA Burden values 0 and 78.71\%, for deletions and amplifications, respectively. The maximum values of the CNA Burden and CNA Amp, 100\% and 99.91\%, and the Difference Score distribution being nearly entirely positive also suggests that almost all of the alterations observed are amplifications. Figure \ref{fig:Score_Comp_Dense_Chr1q} indicates that three of the CNA Score metrics on chromosome 1q, Absolute CNA Score, CNA Amp Score and Difference Score, have trimodal distributions. Three peaks correspond to cases where patients have low, moderate and high levels of GI. For the CNA Burden metrics the majority of the metric distributions are bimodal, with peaks corresponding to patients with low and high GI. 
+Rather than extensively presenting details of distributions for each of the 42 chromosome arms, we select chromosome arm 1q for more detailed illustration and discussion (see online Supplementary Information for remaining chromosome arms). Chromosome arm 1q is frequently altered in breast cancer and shows interesting features in this analysis. The summary statistics (Tables \ref{tab:Score_All_Chr1q}-\ref{tab:Burden_CCA_Chr1q}) and distributions (Figures \ref{fig:Score_Comp_Dense_Chr1q} and \ref{fig:Burden_Comp_Dense_Chr1q}) indicate that the copy number landscape of chromosome 1q is dominated by amplifications, median CNA Score values 0 and 954 and median CNA Burden values 0 and 78.71\%, for deletions and amplifications, respectively. The maximum values of the CNA Burden and CNA Amp, 100\% and 99.91\%, and the Difference Score distribution being nearly entirely positive also suggests that almost all of the alterations observed are amplifications. Figure \ref{fig:Score_Comp_Dense_Chr1q} indicates that three of the CNA Score metrics on chromosome 1q, Absolute CNA Score, CNA Amp Score and Difference Score, have trimodal distributions. Three peaks correspond to cases where patients have low, moderate and high levels of GI. For the CNA Burden metrics the majority of the metric distributions are bimodal, with peaks corresponding to patients with low and high GI. 
 
 Overall, assessing distributions of the global CNA metrics comparing CC patient data to all-patient data, i.e. including those with some missingness prevalent, shows that missing values have only a minor impact on these distributions. The impact of missingness is greater in the chromosome arm CNA metric distributions, however, as the majority of distributions displayed greater than 80\% overlap, it is determined that including all cases, across the global and chromosome arm-specific metrics, is unlikely to invoke bias in the form of underestimating the CNA metrics. Furthermore, imputation of missing CNA values was considered but not performed as the impact of the missing values on the CNA metric distributions was shown to be minor across the majority of CNA metrics.
 
@@ -573,7 +573,7 @@ Difference 18q & \cellcolor[HTML]{440154}{\textcolor{white}{79.68}}\\
 
 \begin{table}[!ht]
 \center
-\caption[Summary statistics of the CNA Score metrics on chromosome 1q where all available data is used.]{Summary statistics of the CNA Score metrics on chromosome 1q  where all available data is used.}
+\caption[Summary statistics of the CNA Score metrics on chromosome 1q where all available data are used.]{Summary statistics of the CNA Score metrics on chromosome 1q  where all available data are used.}
 \includegraphics[width = 0.98\textwidth]{../tables/Chapter_2/CNA_Score_Metric_All_Chr1q_Summary.png}
 \label{tab:Score_All_Chr1q}
 \end{table}
@@ -587,7 +587,7 @@ Difference 18q & \cellcolor[HTML]{440154}{\textcolor{white}{79.68}}\\
 
 \begin{table}[!ht]
 \center
-\caption[Summary statistics of the CNA Burden metrics on chromosome 1q where all available data is used.]{Summary statistics of the CNA Burden metrics on chromosome 1q where all available data is used.}
+\caption[Summary statistics of the CNA Burden metrics on chromosome 1q where all available data are used.]{Summary statistics of the CNA Burden metrics on chromosome 1q where all available data are used.}
 \includegraphics[width = 0.98\textwidth]{../tables/Chapter_2/CNA_Burden_Metric_All_Chr1q_Summary.png}
 \label{tab:Burden_All_Chr1q}
 \end{table}
@@ -678,14 +678,14 @@ The observed distribution of the six CNA metrics, for patients stratified by Int
 \begin{figure}[!ht]
 \center
 \includegraphics[width=1\textwidth]{../figures/Chapter_2/Global_CNA_Score_Metrics_Across_IntClust.png}
-\caption[Boxplots for each CNA Score metric by IntClust.]{Boxplots for each CNA Score metric by IntClust. Each facet contains boxplots for the CNA Score metrics calculated using all available data and Benjamini-Hochberg adjusted Kruskal-Wallis p-values. NA denotes METABRIC patients missing IntClust information.}
+\caption[Boxplots for each CNA Score metric by Integrative Cluster.]{Boxplots for each CNA Score metric by Integrative Cluster. Each facet contains boxplots for the CNA Score metrics calculated using all available data and Benjamini-Hochberg adjusted Kruskal-Wallis p-values. NA denotes METABRIC patients missing Integrative Cluster information.}
 \label{fig:CNA-Score-Metric-Boxplots-IC}
 \end{figure}
 
 \begin{figure}[!ht]
 \center
 \includegraphics[width=1\textwidth]{../figures/Chapter_2/Global_CNA_Burden_Metrics_Across_IntClust.png}
-\caption[Boxplots for each CNA Burden metric by IntClust.]{Boxplots for each CNA Burden metric by IntClust. Each facet contains boxplots for the CNA Burden metrics calculated using all available data and Benjamini-Hochberg adjusted Kruskal-Wallis p-values. NA denotes METABRIC patients missing IntClust information.}
+\caption[Boxplots for each CNA Burden metric by Integrative Cluster.]{Boxplots for each CNA Burden metric by Integrative Cluster. Each facet contains boxplots for the CNA Burden metrics calculated using all available data and Benjamini-Hochberg adjusted Kruskal-Wallis p-values. NA denotes METABRIC patients missing Integrative Cluster information.}
 \label{fig:CNA-Burden-Metric-Boxplots-IC}
 \end{figure}
 
@@ -764,7 +764,7 @@ Overall, patients exhibiting the highest levels of GI across most of the chromos
 \begin{figure}[!h]
 \center
 \includegraphics[width=1\textwidth]{../figures/Chapter_2/ChrArm_CNA_Burden_Metrics_Across_PAM50_Basal_Burden.png}
-\caption[Density plots for each selected chromosome arm CNA Burden metrics, with a focus on the Basal subtype.]{Density plots for each selected chromosome arm CNA Burden metrics, with a focus on the Basal subtype. Chromosome arms where Basal patients display high GI are selected. Each facet contains boxplots for the chromosome arm CNA Burden metrics calculated using all available data and Benjamini-Hochberg adjusted Kruskal-Wallis p-values.}
+\caption[Density plots for each selected chromosome arm CNA Burden metric, with a focus on the Basal subtype.]{Density plots for each selected chromosome arm CNA Burden metric, with a focus on the Basal subtype. Chromosome arms where Basal patients display high GI are selected. Each facet contains boxplots for the chromosome arm CNA Burden metrics calculated using all available data and Benjamini-Hochberg adjusted Kruskal-Wallis p-values.}
 \label{fig:PA-CNA-Score-Metric-Density-P50-5q}
 \end{figure}
 \vfill
@@ -779,7 +779,7 @@ Overall, patients exhibiting the highest levels of GI across most of the chromos
 \begin{figure}[!ht]
 \center
 \includegraphics[width=1\textwidth]{../figures/Chapter_2/ChrArm_CNA_Burden_Metrics_Across_PAM50_HER2_Burden.png}
-\caption[Density plots for each selected chromosome arm CNA Burden metrics, with a focus on the HER2 subtype.]{Density plots for each selected chromosome arm CNA Burden metrics, with a focus on the HER2 subtype. Chromosome arms where HER2 patients display high GI are selected. Each facet contains boxplots for the chromosome arm CNA Burden metrics calculated using all available data and Benjamini-Hochberg adjusted Kruskal-Wallis p-values.}
+\caption[Density plots for each selected chromosome arm CNA Burden metric, with a focus on the HER2 subtype.]{Density plots for each selected chromosome arm CNA Burden metric, with a focus on the HER2 subtype. Chromosome arms where HER2 patients display high GI are selected. Each facet contains boxplots for the chromosome arm CNA Burden metrics calculated using all available data and Benjamini-Hochberg adjusted Kruskal-Wallis p-values.}
 
 \label{fig:PA-CNA-Score-Metric-Density-P50-17q}
 \end{figure}
@@ -787,14 +787,14 @@ Overall, patients exhibiting the highest levels of GI across most of the chromos
 \begin{figure}[!htb]
 \center
 \includegraphics[width=1\textwidth]{../figures/Chapter_2/ChrArm_CNA_Burden_Metrics_Across_PAM50_Luminal_Burden.png}
-\caption[Density plots for each selected chromosome arm CNA Burden metrics, with a focus on the Luminal subtype.]{Density plots for each selected chromosome arm CNA Burden metrics, with a focus on the Luminal subtype. Chromosome arms where Luminal patients display high GI are selected. Each facet contains boxplots for the chromosome arm CNA Burden metrics calculated using all available data and Benjamini-Hochberg adjusted Kruskal-Wallis p-values.}
+\caption[Density plots for each selected chromosome arm CNA Burden metric, with a focus on the Luminal subtype.]{Density plots for each selected chromosome arm CNA Burden metric, with a focus on the Luminal subtype. Chromosome arms where Luminal patients display high GI are selected. Each facet contains boxplots for the chromosome arm CNA Burden metrics calculated using all available data and Benjamini-Hochberg adjusted Kruskal-Wallis p-values.}
 \label{fig:PA-CNA-Score-Metric-Density-P50-16q}
 \end{figure}
 
 \begin{figure}[!htb]
 \center
 \includegraphics[width=1\textwidth]{../figures/Chapter_2/ChrArm_CNA_Burden_Metrics_Across_IC.png}
-\caption[Density plots for each selected chromosome arm CNA Burden metrics across Integrative Cluster.]{Density plots for each selected chromosome arm CNA Burden metrics across Integrative Cluster. Each facet contains boxplots for the chromosome arm CNA Burden metrics calculated using all available data and Benjamini-Hochberg adjusted Kruskal-Wallis p-values.}
+\caption[Density plots for each selected chromosome arm CNA Burden metric across Integrative Cluster.]{Density plots for each selected chromosome arm CNA Burden metric across Integrative Cluster. Each facet contains boxplots for the chromosome arm CNA Burden metrics calculated using all available data and Benjamini-Hochberg adjusted Kruskal-Wallis p-values.}
 \label{fig:PA_IC}
 \end{figure}
 

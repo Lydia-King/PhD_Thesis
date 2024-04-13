@@ -100,7 +100,7 @@ As an example, Figure \ref{fig:SurvivalCurves} provides the KM survival curves f
 \vfill 
 \begin{figure}[!h]
 \includegraphics[width=1\textwidth]{../figures/Chapter_3/Example_Survival_Curve.png}
-\caption[Kaplan-Meier plot for disease specific survival in METABRIC patients stratified by HER2 status.]{Kaplan-Meier plot for disease-specific survival in METABRIC patients stratified by HER2 status. Lines corresponding to median disease-specific survival time for each group and the p-value associated with the log-rank test are displayed.}
+\caption[Kaplan-Meier plot for disease-specific survival in METABRIC patients stratified by HER2 status.]{Kaplan-Meier plot for disease-specific survival in METABRIC patients stratified by HER2 status. Lines corresponding to median disease-specific survival time for each group and the p-value associated with the log-rank test are displayed.}
 \label{fig:SurvivalCurves}
 \end{figure}
 \vfill
@@ -150,7 +150,7 @@ KM fitted to patients stratified by the four levels of Absolute CNA Score Quarti
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.98\textwidth]{../figures/Chapter_3/Luminal_AB_Score_OS.png}
-\caption[Kaplan-Meier plots for overall survival for METABRIC Luminal breast cancer patients in each Absolute CNA Score Quartile.]{Kaplan-Meier plots for overall survival for METABRIC Luminal breast cancer patients in each Absolute CNA Score Quartile. The p-value associated with the log-rank test and a risk table displaying the number of patients at risk at each time interval is displayed.}
+\caption[Kaplan-Meier plot for overall survival for METABRIC Luminal breast cancer patients in each Absolute CNA Score Quartile.]{Kaplan-Meier plot for overall survival for METABRIC Luminal breast cancer patients in each Absolute CNA Score Quartile. The p-value associated with the log-rank test and a risk table displaying the number of patients at risk at each time interval is displayed.}
 \label{fig:OS-Survival-Luminal}
 \end{figure}
 
@@ -158,7 +158,7 @@ KM fitted to patients stratified by the four levels of Absolute CNA Score Quarti
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.98\textwidth]{../figures/Chapter_3/Luminal_AB_Score_DSS.png}
-\caption[Kaplan-Meier plots for disease-specific survival for METABRIC Luminal breast cancer patients in each Absolute CNA Score Quartile.]{Kaplan-Meier plots for disease-specific survival for METABRIC Luminal breast cancer patients in each Absolute CNA Score Quartile. The p-value associated with the log-rank test and a risk table displaying the number of patients at risk at each time interval is displayed.}
+\caption[Kaplan-Meier plot for disease-specific survival for METABRIC Luminal breast cancer patients in each Absolute CNA Score Quartile.]{Kaplan-Meier plot for disease-specific survival for METABRIC Luminal breast cancer patients in each Absolute CNA Score Quartile. The p-value associated with the log-rank test and a risk table displaying the number of patients at risk at each time interval is displayed.}
 \label{fig:DSS-Survival-Luminal}
 \end{figure}
 
@@ -171,14 +171,14 @@ Since highly correlated predictors may lead to unreliable and unstable estimates
 
 \vfill
 \begin{table}[!h]
-\caption[OS Univariate Cox models for each clinical variable.]{OS Univariate Cox models for each clinical variable. Likelihood ratio test (LRT) and Wald test p-values and Benjamini-Hochberg adjusted p-values are displayed.}
+\caption[Overall survival univariate Cox models for each clinical variable.]{Overall survival univariate Cox models for each clinical variable. Likelihood ratio test (LRT) and Wald test p-values and Benjamini-Hochberg adjusted p-values are displayed.}
 \includegraphics[width=0.98\textwidth]{../tables/Chapter_3/Luminal_Survival_Association_OS.png}
 \label{tab:Surv_Tests_OS}
 \end{table}
 \vfill
 \clearpage
 \begin{table}[!ht]
-\caption[DSS Univariate Cox models for each clinical variable.]{DSS Univariate Cox models for each clinical variable. Likelihood ratio test (LRT) and Wald test p-values and Benjamini-Hochberg adjusted p-values are displayed.}
+\caption[Disease-specific survival univariate Cox models for each clinical variable.]{Disease-specific survival univariate Cox models for each clinical variable. Likelihood ratio test (LRT) and Wald test p-values and Benjamini-Hochberg adjusted p-values are displayed.}
 \includegraphics[width=0.98\textwidth]{../tables/Chapter_3/Luminal_Survival_Association_DSS.png}
 \label{tab:Surv_Tests_DSS}
 \end{table}
@@ -195,7 +195,7 @@ In the model using Absolute CNA Score Quartiles the reference group is Luminal A
 \end{table}
 
 \begin{table}[!htb]
-\caption[Association tests between CNA Quartiles and selected clinical variables.]{Association tests between CNA Quartiles and selected clinical variables. Chi-Squared, Fisher's Exact and Kruskal-Wallis test p-values and Benjamini-Hochberg adjusted p-values are displayed.}
+\caption[Association tests between CNA Quartiles and selected clinical variables.]{Association tests between CNA Quartiles and selected clinical variables. $\chi^2$, Fisher's Exact and Kruskal-Wallis test p-values and Benjamini-Hochberg adjusted p-values are displayed.}
 \includegraphics[width=0.98\textwidth]{../tables/Chapter_3/CNA_Quartile_Clin_Association.png}
 \label{tab:Assoc_Tests_Q}
 \end{table}
@@ -204,7 +204,7 @@ Plotting the adjusted survival curves for Luminal A and Luminal B patients withi
 
 \begin{table}[!htb]
 \tiny
-\caption[Final multivariable CPH model for DSS (Absolute CNA Score Quartiles).]{Final multivariable CPH model for DSS. Including selected clinical variables, Absolute CNA Score Quartiles and an interaction term, within the Luminal METABRIC cohort.}
+\caption[Final multivariable CPH model for disease-specific survival (Absolute CNA Score Quartiles).]{Final multivariable CPH model for disease-specific survival. Including selected clinical variables, Absolute CNA Score Quartiles and an interaction term, within the Luminal METABRIC cohort.}
 \centering
 \resizebox{\textwidth}{!}{ 
     \begin{tabular}{lccccl}
@@ -244,7 +244,7 @@ Plotting the adjusted survival curves for Luminal A and Luminal B patients withi
 
 \begin{table}[!htb]
 \tiny
-\caption[Final multivariable CPH model for DSS (Absolute CNA Score).]{Final multivariable CPH model for DSS. Including selected clinical variables, Absolute CNA Score and an interaction term, within the Luminal METABRIC cohort.}
+\caption[Final multivariable CPH model for disease-specific survival (Absolute CNA Score).]{Final multivariable CPH model for disease-specific survival. Including selected clinical variables, Absolute CNA Score and an interaction term, within the Luminal METABRIC cohort.}
 \centering
 \resizebox{\textwidth}{!}{ 
     \begin{tabular}{lccccl}
@@ -297,7 +297,7 @@ Plotting the adjusted survival curves for Luminal A and Luminal B patients withi
 \FloatBarrier 
 
 \subsubsection{Implementation of Recursive Partitioning Survival Trees}
-Although the fitted models give strong indication that Absolute CNA Score, both as a continuous and categorical metric, can add value in modelling survival outcome in Luminal breast cancer, diagnostic tests indicate that the proportional hazards assumption may not be met (Supplementary Information). As an alternative approach, recursive partitioning survival trees are fitted using the rpart and ctree algorithms. Recursive partitioning trees can explore the association between Absolute CNA Score and survival and examine any interactions between the six clinical variables that were significant in models including Absolute CNA Score variables. The predetermined Absolute CNA Score Quartiles can be fitted in the model as a predictor, but recursive partitioning trees also offer the added benefit of determining the optimum cut-off in Absolute CNA Score, implicit in the partitioning algorithm. 
+Although the fitted models give strong indication that Absolute CNA Score, both as a continuous and categorical metric, can add value in modelling survival outcome in Luminal breast cancer, diagnostic tests indicate that the proportional hazards assumption may not be met (online Supplementary Information). As an alternative approach, recursive partitioning survival trees are fitted using the rpart and ctree algorithms. Recursive partitioning trees can explore the association between Absolute CNA Score and survival and examine any interactions between the six clinical variables that were significant in models including Absolute CNA Score variables. The predetermined Absolute CNA Score Quartiles can be fitted in the model as a predictor, but recursive partitioning trees also offer the added benefit of determining the optimum cut-off in Absolute CNA Score, implicit in the partitioning algorithm. 
 
 Survival trees considering Absolute CNA Score Quartiles, with additional applications provided in Appendix A, suggest a similar partitioning with Absolute CNA Score Q1 and Q2 versus Absolute CNA Score Q3 and Q4, consistent with the effects estimated by the CPH model (Figure \ref{fig:LumAB_Trees_Quart}). Figure \ref{fig:LumAB_Trees_Quart} shows the survival tree fitted using the ctree algorithm, which indicates that for Luminal A patients who have 0-1 positive lymph nodes, tumour size less than 31mm and age of diagnosis less than 71.4 years, DSS outcome can be stratified by Absolute CNA Score Quartile, where patients with high GI show reduced survival probability than those with a lower GI ($p = 0.032$).   
 
@@ -328,7 +328,7 @@ A range of survival trees for OS, DSS, 5-year OS and DSS, and 10-year OS and DSS
 
 Initially survival trees including only PAM50 subtype (Figure \ref{fig:PAM50_Indv_Surv_Trees}) or IntClust (Figure \ref{fig:IC_Indv_Surv_Trees}) as candidate predictors are fitted, indicating which subtypes display similarity in survival outcome and providing information on partitions in trees where only molecular classification is included.
 
-\captionsetup[subfigure]{font={bf,small}, skip=1pt, margin=-0.0cm, singlelinecheck=false}
+\captionsetup[subfigure]{font={normalfont, small}, skip=1pt, margin=-0.0cm, singlelinecheck=false}
 
 \begin{figure}[!h]
 \begin{minipage}{.44\textwidth}
@@ -529,7 +529,7 @@ It appears that the CNA Del Score and Burden metrics are associated with DSS, 5-
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for disease-specific survival using IntClust and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for disease-specific survival using IntClust and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for disease-specific survival using Integrative Cluster and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for disease-specific survival using Integrative Cluster and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:INTCLUST_CNA_Score_DSS}
 \end{figure}
 
@@ -552,7 +552,7 @@ It appears that the CNA Del Score and Burden metrics are associated with DSS, 5-
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for five-year disease-specific survival using IntClust and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for five-year disease-specific survival using IntClust and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year disease-specific survival using Integrative Cluster and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for five-year disease-specific survival using Integrative Cluster and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:INTCLUST_CNA_Score_FiveYearDSS}
 \end{figure}
 
@@ -575,7 +575,7 @@ It appears that the CNA Del Score and Burden metrics are associated with DSS, 5-
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for ten-year disease-specific survival using IntClust and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for ten-year disease-specific survival using IntClust and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for ten-year disease-specific survival using Integrative Cluster and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for ten-year disease-specific survival using Integrative Cluster and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:INTCLUST_CNA_Score_TenYearDSS}
 \end{figure}
 
@@ -598,7 +598,7 @@ It appears that the CNA Del Score and Burden metrics are associated with DSS, 5-
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for disease-specific survival using IntClust and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for disease-specific survival using IntClust and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for disease-specific survival using Integrative Cluster and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for disease-specific survival using Integrative Cluster and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:INTCLUST_CNA_Burden_DSS}
 \end{figure}
 
@@ -621,7 +621,7 @@ It appears that the CNA Del Score and Burden metrics are associated with DSS, 5-
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for five-year disease-specific survival using IntClust and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for five-year disease-specific survival using IntClust and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year disease-specific survival using Integrative Cluster and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for five-year disease-specific survival using Integrative Cluster and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:INTCLUST_CNA_Burden_FiveYearDSS}
 \end{figure}
 
@@ -644,7 +644,7 @@ It appears that the CNA Del Score and Burden metrics are associated with DSS, 5-
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for ten-year disease-specific survival using IntClust and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for ten-year disease-specific survival using IntClust and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for ten-year disease-specific survival using Integrative Cluster and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for ten-year disease-specific survival using Integrative Cluster and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:INTCLUST_CNA_Burden_TenYearDSS}
 \end{figure}
 
@@ -737,7 +737,7 @@ It appears that the CNA Del Score and Burden metrics are associated with DSS, 5-
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for disease-specific survival using IntClust the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for disease-specific survival using IntClust, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for disease-specific survival using Integrative Cluster the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for disease-specific survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:INTCLUST_CNA_Burden_DSS_Clin}
 \end{figure}
 
@@ -760,7 +760,7 @@ It appears that the CNA Del Score and Burden metrics are associated with DSS, 5-
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for five-year disease-specific survival using IntClust, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for five-year disease-specific survival using IntClust, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year disease-specific survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for five-year disease-specific survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:INTCLUST_CNA_Burden_FiveYearDSS_Clin}
 \end{figure}
 
@@ -783,7 +783,7 @@ It appears that the CNA Del Score and Burden metrics are associated with DSS, 5-
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for ten-year disease-specific survival using IntClust, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for ten-year disease-specific survival using IntClust, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for ten-year disease-specific survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for ten-year disease-specific survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:INTCLUST_CNA_Burden_TenYearDSS_Clin}
 \end{figure}
 
@@ -800,7 +800,7 @@ Focusing on survival trees for DSS, 5-year DSS and 10-year DSS, that have the si
 \label{Trees_Arm}
 In addition to expanding the study focus to all patients, we also broaden the analysis by using the 42 chromosome arm CNA Score and Burden metrics as candidate predictors in the survival trees. These chromosome arm CNA metrics are initially included with PAM50 or IntClust molecular classifications to assess whether the chromosome arm CNA metric information can add additional prognostic value to the molecular classifications, and then included with a selection of clinical variables to explore interactions between the clinical variables and CNA metrics.
 
-\subsubsection{Chromosome Arm CNA Metric Survival Trees, in Combination with Molecular Classification Predictors}
+\subsubsection{Chromosome Arm CNA Metric Survival Trees in Combination with Molecular Classification Predictors}
 There was less consistency observed in the survival trees produced using the chromosome arm CNA metrics than in the survival trees using the global CNA metrics. This may be due to the increased number of candidate predictors used in the chromosome arm CNA metric survival trees (43 candidate predictors) compared to the global CNA metric survival trees where seven predictors are included. Including the 42 chromosome arm CNA metrics, along with PAM50 or IntClust molecular classification, as candidate predictors enables us to determine if the CNA Score or Burden on specific chromosome arms is useful in stratifying patients on DSS, 5-year DSS and 10-year DSS outcomes.  
 
 Focusing on the survival trees including the CNA Score metrics (Figure \ref{fig:PAM50_PA_CNA_Score_DSS}-\ref{fig:PAM50_PA_CNA_Score_TenYearDSS}), it is noted that all trees initially split on PAM50 subtype followed by either one or more of the CNA Score metrics, or PAM50 subtype again. While variation is observed between trees for DSS, 5-year DSS and 10-year DSS, CNA Score metrics corresponding to chromosome 3p and 18q appear most frequently as important predictors for DSS. 
@@ -1188,7 +1188,7 @@ The chromosome arms that were selected across the survival trees as useful predi
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for disease-specific survival using IntClust, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for disease-specific survival using IntClust, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for disease-specific survival using Integrative Cluster, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for disease-specific survival using Integrative Cluster, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:PA_INTCLUST_CNA_Burden_DSS_Clin}
 \end{figure}
 
@@ -1211,7 +1211,7 @@ The chromosome arms that were selected across the survival trees as useful predi
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for five-year disease-specific survival using IntClust, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for five-year disease-specific survival using IntClust, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year disease-specific survival using Integrative Cluster, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for five-year disease-specific survival using Integrative Cluster, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:PA_INTCLUST_CNA_Burden_FiveYearDSS_Clin}
 \end{figure}
 
@@ -1234,11 +1234,11 @@ The chromosome arms that were selected across the survival trees as useful predi
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for ten-year disease-specific survival using IntClust, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for ten-year disease-specific survival using IntClust, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for ten-year disease-specific survival using Integrative Cluster, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for ten-year disease-specific survival using Integrative Cluster, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:PA_INTCLUST_CNA_Burden_TenYearDSS_Clin}
 \end{figure}
 
-\subsubsection{Chromosome Arm CNA Metric Survival Trees, in Combination with Molecular Classification and Clinical Predictors} 
+\subsubsection{Chromosome Arm CNA Metric Survival Trees in Combination with Molecular Classification and Clinical Predictors} 
 To assess how the addition of clinical variables alters the observed partitioning and explore interactions between the clinical variables and CNA metrics in modelling DSS, 5-year DSS and 10-year DSS, survival trees including the six CNA Burden metrics, IntClust or PAM50 molecular classification, and selected clinical variables, are fitted (Figures \ref{fig:PA_PAM50_CNA_Burden_DSS_Clin}-\ref{fig:PA_INTCLUST_CNA_Burden_TenYearDSS_Clin}). 
 
 The survival trees utilising the 42 chromosome arm CNA Burden metrics, PAM50 subtype, and selected clinical variables as candidate predictors indicate that a number of chromosome arm CNA Burden metrics, PAM50 subtype and several of the selected clinical variables are identified as useful predictors of DSS, 5-year DSS and 10-year DSS. All trees initially partition on NPI, with thresholds ranging from 4.05 to 5.05, and then on one or more clinical predictors, PAM50 subtype, or chromosome arm CNA Burden metric. For example, the ctree survival tree modelling DSS (Figure \ref{fig:PA_PAM50_CNA_Burden_DSS_Clin}B), partitions patients into six groups, also referred to as nodes, with Node 5 displaying the best DSS. Node 5 corresponds to patients with NPI $\leq 5.05$, number of positive lymph nodes $\leq 1$, CNA Burden on chromosome 1p $\leq 15.81$ and CNA Burden on chromosome 4p $\leq 34.09$. Despite the addition of the clinical variables, CNA Del Burden metrics on chromosome 3p and chromosome 18q are still observed in survival trees modelling 5-year DSS and 10-year DSS, particularly in Claudin-low, Luminal A, Luminal B and Normal patients (Figures \ref{fig:PA_PAM50_CNA_Burden_FiveYearDSS_Clin} and \ref{fig:PA_PAM50_CNA_Burden_TenYearDSS_Clin}). In addition, CNA Amp Burden on chromosome 9q, CNA Difference on chromosome 5q, CNA Difference on chromosome 17p, CNA Burden on 11q, CNA Burden on 16p and CNA Amp Burden on 16p also appear as useful predictors in subgroups of patients. The survival trees including the 42 chromosome arm CNA Burden metrics, IntClust molecular classification, and the selected clinical variables also consistently partition on NPI, with thresholds ranging from 4.05 to 5.05 (Figures \ref{fig:PA_INTCLUST_CNA_Burden_DSS_Clin}-\ref{fig:PA_INTCLUST_CNA_Burden_TenYearDSS_Clin}). 
@@ -1281,7 +1281,7 @@ There are two important aspects of the data used to produce these heatmaps, incl
   \label{PA_SurvTrees_Burden_Heatmaps_11p}
 \end{figure}
 
-\subsection{GNOSIS: an R Shiny app supporting cancer genomics survival analysis with cBioPortal}
+\subsection{GNOSIS: an R Shiny App Supporting Cancer Genomics Survival Analysis with cBioPortal}
 As shown above, and in previous chapters, exploratory, statistical and survival analysis of cancer genomic data is extremely important and can lead to new discoveries, such as the identification of novel genomic prognostic markers, that have the potential to advance our understanding of cancer and ultimately benefit patients. These analyses are often performed on data available from a number of consortia websites, such cBioPortal \citep{pmid22588877, pmid23550210}, which is one of the best known and commonly used consolidated curations that hosts data from large consortium efforts. While cBioPortal provides both graphical user interface (GUI)-based and representational state transfer mediated means for researchers to explore and analyse clinical and genomics data, its capabilities have their limitations and oftentimes, to explore specific hypotheses, users need to perform a more sophisticated ‘off site’ analysis that typically requires users to have some prior programming experience. 
 
 To overcome these limitations and provide a GUI that facilitates the visualisation and interrogation of cancer genomics data, particularly cBioPortal-hosted data, using standard biostatistical methodologies, we developed an R Shiny app called GeNomics explOrer using StatistIcal and Survival analysis in R (GNOSIS). GNOSIS was initially developed as part of our study, using the METABRIC data, to investigate whether survival outcomes are associated with genomic instability in Luminal breast cancers \citep{King_2021} and was further developed to enable the exploration, analysis and incorporation of a diverse range of genomic features with clinical data in a research or clinical setting. 

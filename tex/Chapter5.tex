@@ -1,4 +1,4 @@
-\captionsetup[subfigure]{font={bf, small}, skip=1pt, margin=7.2cm, singlelinecheck=false}
+\captionsetup[subfigure]{font={normalfont, small}, skip=1pt, margin=7.2cm, singlelinecheck=false}
 
 \section{Modelling Allele-Specific Copy Number Associated Changepoints}
 CNAs in cancer have been extensively studied, however due to the complexity of cancer genomes, such as frequent deviations from diploidy and the presence of both tumour and non-tumour cells, many studies have been limited to reporting total CNAs across the genome. Total copy number profiling estimates the sum of the copy numbers of the two homologous chromosomes and as such only provides aggregate information. Determining the copy number landscape of each homologous chromosome, i.e. allele-specific copy number profiling, is important for the characterisation of certain types of genomic aberrations within tumour genomes, such as copy neutral loss of heterozygosity and the inference of their clonal history \citep{pmid20837533, pmid25477383}.  
@@ -118,7 +118,7 @@ Further examples of simulated allele-specific copy number profiles are provided 
 \begin{table}[H]
 \vspace{-0.3cm}
 \centering
-\caption{First 15 rows of the reformatted ASCAT segments file containing the allele-specific copy number calls for each sample. $TS$ and $TE$ displayed in bases.}
+\caption[First 15 rows of the reformatted ASCAT segments file containing the allele-specific copy number calls for each sample.]{First 15 rows of the reformatted ASCAT segments file containing the allele-specific copy number calls for each sample. $TS$ and $TE$ displayed in bases.}
 \begin{tabular}{rlrrrrr}
   \hline
  Sample & Chr & Changepoint & Allele & TS & TE & Category \\ 
@@ -171,7 +171,7 @@ Given a specified interval of observation $d$ where a changepoint is observed in
 
 Where the category contains a Neutral flanking segment (Neut/Amp, Neut/Del, Amp/Neut, Del/Neut) this length can be recorded or set to 0. For the specified interval of observation, if no changepoints of any kind are observed in the interval, the category NoChangepoint can be recorded, within which $TS=TE=0$.
 
-\subsubsection{Allele Independent (AI) Model} \label{Model1}
+\subsubsection{Allele-Independent (AI) Model} \label{Model1}
 Treating the information from both alleles as independent, the following models the average $TS$ length feature, the first response variable, given the type of changepoint: 
 
 \begin{equation}
@@ -222,7 +222,7 @@ The assumptions of the proposed linear models include linearity, normality for a
 
 These models were fit using two R functions, \texttt{lm()} from the stats package \citep{stats} and \texttt{MCMCglmm()} from the MCMCglmm package \citep{MCMCglmm}. While the \texttt{lm()} function can be used to fit basic linear regression models, \texttt{MCMCglmm()} (with default priors) should produce similar results but provides more flexibility. 
 
-\paragraph{Illustration of Allele Independent (AI) Model}
+\paragraph{Illustration of Allele-Independent (AI) Model}
 \hfill
 \newline
 
@@ -325,7 +325,7 @@ Fitting the univariate AIIM to the data, using the \texttt{lm()} function, produ
      \label{fig:lm_uni_1_int}
 \end{figure}
 
-Focusing on the application in which a variant of the dataset excludes all NoChangepoint observations, and fitting the univariate AINIM gives model estimates, as provided in Table \ref{tbl:lm_uni_2_model}, and confidence interval estimates (Table \ref{tbl:lm_uni_2_pred} and Figure  \ref{fig:lm_uni_2_int}).
+Focusing on the application in which a variant of the dataset excludes all NoChangepoint observations, and fitting the univariate AINIM gives parameter estimates, as provided in Table \ref{tbl:lm_uni_2_model}, and confidence interval estimates (Table \ref{tbl:lm_uni_2_pred} and Figure  \ref{fig:lm_uni_2_int}).
 
 The results of the AINIM are similar to the AIIM, with the parameter estimates corresponding to the mean lengths of the $TS$ and $TE$ recorded in Table \ref{tab:three_tables} across all categories, and the interval plots, highlighting the categories where the lower bound of the confidence interval is greater than 0. Utilising the dataset where the neutral lengths are recorded as 0, the mean lengths of $TS$ for the Del/Neut and Amp/Del categories and the mean lengths of the $TE$ for the Neut/Del, Neut/Amp and Amp/Del categories are all significantly greater than 0. When utilising the dataset where the neutral lengths are retained as greater than 0, the mean lengths of $TS$ and $TE$ for all categories are significantly greater than 0. The main consequences of removing the NoChangepoint observations are the reduction in sample size and the increased width of the confidence intervals in the AINIM, compared to the AIIM, due to the removal of a large number of constant 0 values leading to an increase in variance in the dataset. 
 
@@ -519,7 +519,7 @@ Applying univariate ADIMs, for the two responses $TS$ and $TE$, provides model p
 
 \begin{table}[H]
 \centering
-\caption[Univariate Allele-Dependent Intercept Model parameter estimates and intervals fitted using \texttt{lm()}.]{Univariate Allele-Dependent Intercept Model estimates and intervals fitted using \texttt{lm()} and where neutral lengths are recorded as 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
+\caption[Univariate Allele-Dependent Intercept Model parameter estimates and intervals fitted using \texttt{lm()}.]{Univariate Allele-Dependent Intercept parameter estimates and intervals fitted using \texttt{lm()} and where neutral lengths are recorded as 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
       
 \includegraphics[width = 1\textwidth]{../tables/Chapter_5/Univariate_lm_7_AD_Model_Pred.png}
 \label{tab:lm_uni_AD_modpred}
@@ -574,13 +574,13 @@ Overall, these models indicate that there is minimal difference in the categorie
 \centering
 \includegraphics[width = 0.8\textwidth]{../figures/Chapter_5/Multivariate_lm_7_AD_Interval.png}
  
-\caption[Plot of multivariate Allele-Dependent Intercept Model parameter estimates fitted using \texttt{lm()}.]{Plot of multivariate Allele-Dependent Intercept Model parameter estimates fitted using \texttt{lm()} and where neutral lengths are recorded as 0. }
+\caption[Plot of multivariate Allele-Dependent Intercept Model parameter estimates fitted using \texttt{lm()}.]{Plot of multivariate Allele-Dependent Intercept Model parameter estimates fitted using \texttt{lm()} and where neutral lengths are recorded as 0.}
 \label{fig:lm_multi_AD_modpred}
 \end{figure}
 
 \begin{table}[!h]
 \centering
-\caption[Multivariate Allele-Dependent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()}.]{Multivariate Allele-Dependent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()} and where neutral lengths are recorded as length 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals. }
+\caption[Multivariate Allele-Dependent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()}.]{Multivariate Allele-Dependent Non-Intercept Model parameter estimates and intervals fitted using \texttt{lm()} and where neutral lengths are recorded as length 0. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals.}
 
 \includegraphics[width = 1\textwidth]{../tables/Chapter_5/Multivariate_lm_6_AD_Model_Pred.png}
 \label{tab:lm_multi_AD_modpred_6}
@@ -664,7 +664,7 @@ The significance of a changepoint category is assessed based on the confidence i
 
 Fits produced from the multivariate AD models, using the \texttt{MCMCglmm()} function produces similar results to the univariate models and shows that as the sample size increases, the types of changepoints simulated in the scenario are detected as significant (Figure \ref{fig:Multi_mcmc_SimStudy}).
 
-In the multivariate MCMCglmm fit of ADIM, we observe decreased True Positive rate for smaller sample sizes, evident in particular for scenario 2. Taking a closer look at individual datasets in scenario 2 reveals that for sample size $n = 20$, where 90\% of samples display copy number profile C, the Amp/Neut category occurs only twice and as such the $TS$ is not detected in approximately 35\% of datasets (Table \ref{tbl:Individual_1}). In addition, where 10\% of samples display copy number profile C, the Amp/Del category appears only twice and the $TE$ is not detected in approximately 55\% of datasets (Table \ref{tbl:Individual_1}). This indicates that the variability is due to the small sample size and decreased profile percentages of those specific categories. 
+In the univariate and multivariate MCMCglmm fit of ADIM, we observe decreased True Positive rate for smaller sample sizes, evident in particular for scenario 2. Taking a closer look at individual datasets in scenario 2 reveals that for sample size $n = 20$, where 90\% of samples display copy number profile C, the Amp/Neut category occurs only twice and as such the $TS$ is not detected in approximately 35\% of datasets (Table \ref{tbl:Individual_1}). In addition, where 10\% of samples display copy number profile C, the Amp/Del category appears only twice and the $TE$ is not detected in approximately 55\% of datasets (Table \ref{tbl:Individual_1}). This indicates that the variability is due to the small sample size and decreased profile percentages of those specific categories. 
 
 Overall, it appears that for the majority of categories and scenarios, as the profile percentage or sample size increases, the detection of each category simulated goes to 1. Notably, by using intervals to assess significance, we can also identify regions where changepoints over a certain length occur, i.e. over $1,000$kb. This is done by checking whether the lower bound of the confidence interval is greater than 1,000 ($LB > 1000$).
 
@@ -695,7 +695,7 @@ Overall, it appears that for the majority of categories and scenarios, as the pr
 \end{figure}
 
 \begin{table}[!h]
-  \caption{Model estimates for (A) $TS$ Amp/Neut category and (B) $TE$ Amp/Del category, where $n = 20$, across 20 simulated datasets.}
+  \caption[Parameter estimates for selected Allele-Dependent Intercept Model MCMCglmm fits]{Parameter estimates for selected Allele-Dependent Intercept Model MCMCglmm fits. (A) $TS$ Amp/Neut category and (B) $TE$ Amp/Del category, where $n = 20$, across 20 simulated datasets. Fit, LB and UB correspond to the parameter estimates and associated 95\% confidence intervals.}
   \label{tbl:Individual_1}
   \includegraphics[width=0.5\linewidth]{"../tables/Chapter_5/Model_Scenario_2_Closer_Look_1.png"}
   \includegraphics[width=0.5\linewidth]{"../tables/Chapter_5/Model_Scenario_2_Closer_Look_2.png"}

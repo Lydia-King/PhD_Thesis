@@ -14,7 +14,7 @@ The basic limma pipeline, fitted with array weights and applying the same common
 
 In Section \ref{Sec_limma_2}, to model the direct relationship between CNA states and gene expression, a modified limma pipeline allowing a different design matrix to be fitted for each gene is implemented. The modification, and additional tailored R programming, is necessary in this application since a patient's CNA state may differ across genes. In addition, since some genes may not exhibit any CNAs or have very few, resulting in cases where the sample size of the particular CNA state may be too small to support inference, genes not altered with sufficient frequency ($< 1\%$) in the CNA state of interest were filtered out for that comparison only. 
 
-\subsection{Application to METABRIC cohort}
+\subsection{Application to the METABRIC Cohort}
 DGEA to compare gene expression between METABRIC patients stratified by the global and chromosome arm CNA metric informed survival profiles was carried out. We first focus on presenting four DGEA applications of interest from the survival trees produced as a result of incorporation of the global CNA metric information and then on presenting three DGEA applications of interest from the survival trees produced as a result of incorporation of the chromosome arm CNA metric information. These survival trees, produced for a range of survival times (DSS, 5- and 10-year DSS) and algorithms (rpart and ctree), were selected for DGEA as they partitioned the METABRIC patients first on PAM50 or IntClust and subsequently on a single global or chromosome arm CNA metric, simplifying comparison and inference. The gene expression data, downloaded from cBioPortal in 2023 and used here, include 18,739 genes for which CNA, gene expression and genomic location data were available. 
 
 \subsubsection{Differential Gene Expression Analysis of Global CNA Metric Survival Tree Nodes}
@@ -57,7 +57,7 @@ The 10-year DSS ctree survival tree (Figure \ref{fig:DGEA_Global_VP_IC}B), showe
     \includegraphics[width=1\linewidth]{../figures/Chapter_4/Volcano_4.png}\par 
  
 \end{multicols}
-\caption[Volcano plots resulting from DGEA applied to compare nodes informed by global CNA Burden metrics and IntClust.]{Volcano plots resulting from DGEA applied to compare nodes informed by global CNA Burden metrics and IntClust. Plots show differentially expressed genes between (A) Node 3 and Node 4 of the rpart DSS survival tree and (B) Node 6 and Node 7 of the ctree 10-year DSS survival tree.}
+\caption[Volcano plots resulting from DGEA applied to compare nodes informed by global CNA Burden metrics and Integrative Cluster.]{Volcano plots resulting from DGEA applied to compare nodes informed by global CNA Burden metrics and Integrative Cluster. Plots show differentially expressed genes between (A) Node 3 and Node 4 of the rpart DSS survival tree and (B) Node 6 and Node 7 of the ctree 10-year DSS survival tree.}
 \label{fig:DGEA_Global_VP_IC}
 \end{center}
 \end{figure}
@@ -168,7 +168,7 @@ IntClust & 1,000 & 959 & see Appendix D for full list \\
 \vfill
 \newpage 
 
-\captionsetup[subfigure]{font={bf,small}, margin=3.8cm, singlelinecheck=false}
+\captionsetup[subfigure]{font={normalfont,small}, margin=3.8cm, singlelinecheck=false}
 
 \begin{figure}[H]
 \centering
