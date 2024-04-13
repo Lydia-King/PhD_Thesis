@@ -205,6 +205,10 @@ Total_ASCAT_Data_NoNeut |>
     tab_header(
         title =  md("**Summary Statistics of Segment Kilobase Lengths**")
     ) |> 
+    cols_align(
+        align = "left",
+        columns = Category
+    ) |>
     tab_spanner(
         label = md("**TS**"),
         columns = c(3,4,5)
@@ -249,6 +253,10 @@ Total_ASCAT_Data_Neut |>
                      "sd"  = sd(TS), "mean " = mean(TE), "median " = median(TE), 
                      "sd " = sd(TE)) |>
     gt() |>
+    cols_align(
+        align = "left",
+        columns = Category
+    ) |>
     tab_header(
         title =  md("**Summary Statistics of Segment Kilobase Lengths**")
     ) |> 

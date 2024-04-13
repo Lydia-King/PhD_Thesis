@@ -9,7 +9,17 @@ Model4_Genes_MCMCglmm <- read.delim("../../data/Chapter_6/Model4_Genes_func1_MCM
 nrow(Model4_Genes_MCMCglmm %>% filter(is.na(Category)))
 nrow(Model4_Genes_lm %>% filter(is.na(Category)))
 
-## Remove 10,934 genes that could be fit 
+check_NA <- Model4_Genes_lm %>% 
+    group_by(across(Gene)) %>%
+    filter(n() == 1) 
+
+check_NA_2 <- Model4_Genes_MCMCglmm %>% 
+    group_by(across(Gene)) %>%
+    filter(n() == 1) 
+
+# 22544-20253
+
+## Remove 10,966 genes that could be fit 
 Model4_lm_Genes_Filtered <- Model4_Genes_lm[!is.na(Model4_Genes_lm$Category),]
 
 Model4_lm_Genes_Filtered$Gene <- gsub("chr_\\d+_Gene_", "", Model4_lm_Genes_Filtered$Gene)
@@ -128,7 +138,7 @@ ggplot(grouped_data,
     guide = "none") + geom_point(aes(size = Final_n, colour = Sig),
                shape = 16) + 
     theme(panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank()) +  theme(axis.text.x = element_blank()) + theme(axis.ticks.x = element_blank())  + ggtitle("Changepoints of Significant Length across Genes (LB > 10000kb)") + 
+          panel.grid.minor = element_blank()) +  theme(axis.text.x = element_blank()) + theme(axis.ticks.x = element_blank())  + ggtitle("Changepoints of Significant Length across Genes (LB > 10,000kb)") + 
     theme(plot.title = element_text(hjust = 0.5)) +  scale_shape_manual(
         name = "Sig & Sample Size",
         labels = c("250", "500", "750"),
@@ -192,7 +202,7 @@ ggplot(grouped_data,
            guide = "none") + geom_point(aes(size = Final_n, colour = Sig),
                                         shape = 16) + 
     theme(panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank()) +  theme(axis.text.x = element_blank()) + theme(axis.ticks.x = element_blank())  + ggtitle("Changepoints of Significant Length across Genes (LB > 10000kb)") + 
+          panel.grid.minor = element_blank()) +  theme(axis.text.x = element_blank()) + theme(axis.ticks.x = element_blank())  + ggtitle("Changepoints of Significant Length across Genes (LB > 10,000kb)") + 
     theme(plot.title = element_text(hjust = 0.5)) +  scale_shape_manual(
         name = "Sig & Sample Size",
         labels = c("250", "500", "750"),
@@ -273,7 +283,7 @@ Tab_1 <- Model4_lm_Genes_Filtered %>% select(Gene, Chr, Allele, Category, Sample
     filter(LB > 10000, n > 30) %>% arrange(desc(Fit)) %>% 
     gt()  %>%
     tab_header(
-        title = md("**(B) Genes Containing Changepoints with Large CNAs* (lm)*"), 
+        title = md("**(B) Genes Containing Changepoints with Large CNAs (lm)**"), 
     )
 
 Model4_mcmc_Genes_Filtered$Gene <- gsub("chr_\\d+_Gene_", "", Model4_mcmc_Genes_Filtered$Gene)

@@ -1,9 +1,14 @@
 # Load up Data
 Model4_5mil_MCMCglmm <- read.delim("../../data/ASCAT_Data/Model4_Segments/Model4_5million_func1.txt", sep="\t")
 
+Model4_5mil_MCMCglmm %>% mutate(next1 = paste0(Chr, Segment, sep= "")) %>% summarise(n = n_distinct(next1))
+
+Model4_5mil_MCMCglmm %>% filter(LB > 10000, n > 200) %>% mutate(next1 = paste0(Chr, Segment, sep= "")) %>% summarise(n = n_distinct(next1))
+    
 # Libraries 
 library(gt)
 library(tidyverse)
+library(scales)
 
 ## LM Tile Plots
 ### Segment function
@@ -250,7 +255,7 @@ TilePlot_Func <- function(model = c("LM", "MCMC"), thres = 10, Data, Name, width
                guide = "none") + geom_point(aes(size = Final_n, colour = Sig),
                                             shape = 16) + 
         theme(panel.grid.major = element_blank(),
-              panel.grid.minor = element_blank()) +  theme(axis.text.x = element_blank()) + theme(axis.ticks.x = element_blank())  + ggtitle(paste("Changepoints of Significant Length across", width, "Segments (LB > ", thres, "kb)", sep="")) + 
+              panel.grid.minor = element_blank()) +  theme(axis.text.x = element_blank()) + theme(axis.ticks.x = element_blank())  + ggtitle(paste("Changepoints of Significant Length across", width, "Segments (LB > ", comma_format()(thres), "kb)", sep="")) + 
         theme(plot.title = element_text(hjust = 0.5)) +  
         scale_color_discrete(na.translate=FALSE) +
         scale_shape_manual(

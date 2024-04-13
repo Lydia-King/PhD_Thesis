@@ -88,7 +88,7 @@ Table_function_Pred <- function(Dataset,
             mod_TS <-
                 MCMCglmm(
                     cbind(TS, TE) ~ trait:(Category * Allele),
-                    data = DF,
+                    data = DF3,
                     family = c("gaussian", "gaussian"),
                     nitt = 60000,
                     thin = 10,
@@ -590,16 +590,16 @@ Table_function_Pred <- function(Dataset,
             
         } else {
             newdata = data.frame(
-                "Category" = c(unique(DF[, c('Category', "Allele")])[1]),
+                "Category" = c(unique(DF3[, c('Category', "Allele")])[1]),
                 "TS" = c(rep(0, nrow(
-                    unique(DF[, c('Category', "Allele")])[1]
+                    unique(DF3[, c('Category', "Allele")])[1]
                 ))),
                 "TE" =  c(rep(0, nrow(
-                    unique(DF[, c('Category', "Allele")])[1]
+                    unique(DF3[, c('Category', "Allele")])[1]
                 ))),
-                "Allele" = c(unique(DF[, c('Category', "Allele")])[2]),
+                "Allele" = c(unique(DF3[, c('Category', "Allele")])[2]),
                 "Sample" = c(paste("Sample", 1:nrow(
-                    unique(DF[, c('Category', "Allele")])[1]
+                    unique(DF3[, c('Category', "Allele")])[1]
                 )))
             )
             
@@ -616,7 +616,7 @@ Table_function_Pred <- function(Dataset,
                         ))),
                         "Beta" = sum_TS$solutions[, 1],
                         "P" = sum_TS$solutions[, 5],
-                        "Allele" = NA
+                        "Allele" = ifelse(grepl("AlleleMinor", rownames(sum_TS$solutions), fixed = TRUE), "Minor", "Major")
                     )
                 )
             
@@ -763,7 +763,7 @@ Table_function_Pred <- function(Dataset,
                         "Samplesize" = c(rep(SS1$n, 2)),
                         "Beta" = sum_TS$solutions[, 1],
                         "P" = sum_TS$solutions[, 5],
-                        "Allele" = NA
+                        "Allele" = ifelse(grepl("AlleleMinor", rownames(sum_TS$solutions), fixed = TRUE), "Minor", "Major")
                     )
                 )
             
@@ -880,6 +880,10 @@ for(i in 1:length(Results_List_NoNeut)){
     dat |>
         select(-c(Chr)) |> select(Coefficients, Allele, everything()) |> rename(n = Samplesize) |> filter(n > 0) |>
         gt() |>
+        cols_align(
+            align = "left",
+            columns = c(Category, Coefficients)
+        ) |>
         tab_header(
             title =  md("**Parameter Estimates and Confidence Intervals**")
         )  |>

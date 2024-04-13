@@ -254,10 +254,10 @@ Table_function_Pred <-
                         Category,
                         levels = c(
                             "NoChangepoint",
-                            "Neutral/Amp",
-                            "Neutral/Del",
-                            "Amp/Neutral",
-                            "Del/Neutral",
+                            "Neut/Amp",
+                            "Neut/Del",
+                            "Amp/Neut",
+                            "Del/Neut",
                             "Amp/Del",
                             "Del/Amp"
                         )
@@ -483,10 +483,10 @@ Table_function_Pred <-
                         Category,
                         levels = c(
                             "NoChangepoint",
-                            "Neutral/Amp",
-                            "Neutral/Del",
-                            "Amp/Neutral",
-                            "Del/Neutral",
+                            "Neut/Amp",
+                            "Neut/Del",
+                            "Amp/Neut",
+                            "Del/Neut",
                             "Amp/Del",
                             "Del/Amp"
                         )
@@ -600,10 +600,10 @@ Table_function_Pred <-
                         Category,
                         levels = c(
                             "NoChangepoint",
-                            "Neutral/Amp",
-                            "Neutral/Del",
-                            "Amp/Neutral",
-                            "Del/Neutral",
+                            "Neut/Amp",
+                            "Neut/Del",
+                            "Amp/Neut",
+                            "Del/Neut",
                             "Amp/Del",
                             "Del/Amp"
                         )
@@ -829,6 +829,10 @@ for(i in 1:length(Results_List_Neut)){
     ## Pred
     Results_List_Neut[[i]][[2]] |>
         gt() |>
+        cols_align(
+            align = "left",
+            columns = Category
+        ) |>
         tab_header(
             title =  md("**(B) Parameter Estimates and Confidence Intervals**")
         )  |>

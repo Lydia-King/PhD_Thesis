@@ -18,6 +18,7 @@ DF3_Neut <-
 ### Structure of Data
 DF3 %>% filter(Sample %in% c("Sample 1", "Sample 5", "Sample 13")) %>%
     select(Sample, Category, Allele, CP, TS, TE) |>
+    mutate(Category = as.character(Category)) |>
     rename("Changepoint" = CP) |>
     gt()  |>
     tab_header(title =  md("**Example of Possible Simulated Samples**")) |>
@@ -59,6 +60,10 @@ DF3_Neut %>% filter(Sample %in% c("Sample 1", "Sample 5", "Sample 13")) %>%
         ),
         locations = cells_body()
     ) |>
+    cols_align(
+        align = "left",
+        columns = Category
+    ) |>
     tab_style(style = "padding-top:7px;padding-bottom:7px;padding-left:12px;padding-right:12px",
               locations = cells_body()) |>
     fmt_number(columns = c(3, 4, 5, 6),
@@ -87,6 +92,10 @@ DF3 |>
         "sd " = sd(TE)
     ) |>
     gt() |>
+    cols_align(
+        align = "left",
+        columns = Category
+    ) |>
     tab_header(title =  md("**Summary Statistics for Simulated Dataset by Category**")) |>
     tab_spanner(label = md("**TS**"),
                 columns = c(3, 4, 5)) |>
@@ -132,6 +141,10 @@ DF3_Neut |>
         "sd " = sd(TE)
     ) |>
     gt() |>
+    cols_align(
+        align = "left",
+        columns = Category
+    ) |>
     tab_header(title =  md("**Summary Statistics for Simulated Dataset by Category**")) |>
     tab_spanner(label = md("**TS**"),
                 columns = c(3, 4, 5)) |>
@@ -178,6 +191,10 @@ DF3 |>
         "sd " = sd(TE)
     ) |>
     gt() |>
+    cols_align(
+        align = "left",
+        columns = Category
+    ) |>
     tab_header(title =  md("**Summary Statistics for Simulated Dataset by Allele and Category**")) |>
     tab_spanner(label = md("**TS**"),
                 columns = c(4,5,6)) |>
