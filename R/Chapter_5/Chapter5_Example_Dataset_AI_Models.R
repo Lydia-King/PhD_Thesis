@@ -733,6 +733,10 @@ for(i in 1:length(Results_List_NoNeut)){
         tab_header(
             title =  md("**(A) Parameter Estimates and Confidence Intervals**")
         )  |>
+        cols_align(
+            align = "left",
+            columns = Category
+        ) |>
         tab_style(
             style = cell_borders(
                 sides = c("all"),
