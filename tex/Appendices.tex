@@ -3,6 +3,8 @@
 \setcounter{figure}{0}
 \setcounter{table}{0}
 
+\captionsetup[subfigure]{font={normalfont,small}, skip=1pt, margin=-0.0cm, singlelinecheck=false}
+
 \section*{Appendix A}
 \phantomsection
 \addcontentsline{toc}{section}{Appendix A}
@@ -12,15 +14,26 @@
 Appendix A contains a list of the 23 clinical variables considered at the beginning of Chapter 3 and 
 the rpart survival trees including selected clinical variables and Absolute CNA Scores/Quartiles as candidate predictors.
 
-List of the 23 clinical variables mentioned in section 3.2: ER\_IHC, HER2\_SNP6, HORMONE\_THERAPY, INFERRED\_MENOPAUSAL\_STATE, INTCLUST, CLAUDIN\_SUBTYPE, THREEGENE, RADIO\_THERAPY, HISTOLOGICAL\_SUBTYPE, BREAST\_SURGERY, CANCER\_TYPE\_DETAILED, HER2\_STATUS, GRADE, PR\_STATUS, LYMPH\_NODES\_EXAMINED\_POSITIVE, NPI, AGE\_AT\_DIAGNOSIS, TUMOR\_SIZE, TUMOR\_STAGE, CELLULARITY, LATERALITY, ER\_STATUS, CHEMOTHERAPY.
+List of the 23 clinical variables mentioned in section 3.2: ER\_IHC, HER2\_SNP6, HORMONE\_THERAPY, INFERRED\_MENOPAUSAL\_STATE, INTCLUST, CLAUDIN\_SUBTYPE, THREEGENE, RADIO\_THERAPY, HISTOLOGICAL\_SUBTYPE, BREAST\_SURGERY, CHEMOTHERAPY, CANCER\_TYPE\_DETAILED, HER2\_STATUS, GRADE, PR\_STATUS, LYMPH\_NODES\_EXAMINED\_POSITIVE, NPI, AGE\_AT\_DIAGNOSIS, TUMOR\_SIZE, TUMOR\_STAGE, CELLULARITY, LATERALITY, ER\_STATUS.
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=0.75\textwidth]{../figures/Appendices/Appendix_A/LuminalAB_Rpart_DSS_Score.png}
-\includegraphics[width=0.75\textwidth]{../figures/Appendices/Appendix_A/LuminalAB_Rpart_DSS_Quart.png}
-\caption[Recursive partitioning survival trees, fitted using the rpart algorithm, for disease-specific survival using clinical variables and CNA Score/Quartile as candidate predictors.]{Recursive partitioning survival trees, fitted using the rpart algorithm, for disease-specific survival using clinical variables and CNA Score and CNA Quartile as candidate predictors.}
+
+\begin{subfigure}{\textwidth}
+\subcaption{}
+\centering
+\includegraphics[width=0.72\textwidth]{../figures/Appendices/Appendix_A/LuminalAB_Rpart_DSS_Score.png}
+\end{subfigure}
+
+\begin{subfigure}{\textwidth}
+\subcaption{}
+\centering
+\includegraphics[width=0.72\textwidth]{../figures/Appendices/Appendix_A/LuminalAB_Rpart_DSS_Quart.png}
+\end{subfigure}
+\caption[Recursive partitioning survival trees, fitted using the rpart algorithm, for disease-specific survival using clinical variables and Absolute CNA Score/Quartile as candidate predictors.]{Recursive partitioning survival trees, fitted using the rpart algorithm, for disease-specific survival using clinical variables and (A) Absolute CNA Score and (B) Absolute CNA Quartile as candidate predictors.}
 \label{fig:LumAB_Trees_Quart_Rpart}
 \end{figure}
+
 
 \section*{Appendix B}
 \renewcommand{\thefigure}{B\arabic{figure}}
@@ -33,10 +46,9 @@ List of the 23 clinical variables mentioned in section 3.2: ER\_IHC, HER2\_SNP6,
 
 \markboth{\MakeUppercase{APPENDIX B}}{\MakeUppercase{APPENDIX B}}
 
-Appendix B contains the rpart and ctree survival trees for OS outcomes. These survival trees are fitted under a number of scenarios (1) including PAM50 and IntClust only, (2) including Global CNA metrics and PAM50 or IntClust, (3) including Global CNA metrics, PAM50 subtype or IntClust, and a selection of clinical variables, (4) including Chromosome arm CNA metrics and PAM50 or IntClust, and (5) including Chromosome arm CNA metrics, PAM50 subtype or IntClust, and a selection of clinical variables. 
+Appendix B contains the rpart and ctree survival trees for OS outcomes. These survival trees are fitted under a number of scenarios: (1) including PAM50 subtype and IntClust only, (2) including Global CNA metrics and PAM50 subtype or IntClust, (3) including global CNA metrics, PAM50 subtype or IntClust, and a selection of clinical variables, (4) including chromosome arm CNA metrics and PAM50 subtype or IntClust, and (5) including chromosome arm CNA metrics, PAM50 subtype or IntClust, and a selection of clinical variables. 
 
 % OS using PAM50 Subtype/IntClust as candidate predictor
-\captionsetup[subfigure]{font={normalfont,small}, skip=1pt, margin=-0.0cm, singlelinecheck=false}
 
 \begin{figure}[!htbp]
 \centering
@@ -54,7 +66,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 \end{subfigure}\par
 \end{minipage}
 
-\caption[Recursive partitioning survival trees for overall survival using PAM50 Subtype as a candidate predictor.]{Recursive partitioning survival trees for overall survival using PAM50 Subtype as a candidate predictor. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for overall survival using PAM50 subtype as a candidate predictor.]{Recursive partitioning survival trees for overall survival using PAM50 subtype as a candidate predictor. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htbp]
@@ -77,7 +89,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 \end{figure}
 
 % Global CNA metrics 
-% OS using PAM50 Subtype and the 6 CNA Score metrics as candidate predictor
+% OS using PAM50 Subtype and the six CNA Score metrics as candidate predictor
 
 \begin{figure}[!htb]
 \centering
@@ -98,7 +110,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for overall survival using PAM50 and the 6 CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for overall survival using PAM50 and the six CNA Score metrics as candidate predictors. Trees fitted using the rpart algorithm are displayed on the top and trees fitted using the ctree algorithm are displayed on the bottom.}
+\caption[Recursive partitioning survival trees for overall survival using PAM50 subtype and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for overall survival using PAM50 subtype and the six CNA Score metrics as candidate predictors. Trees fitted using the rpart algorithm are displayed on the top and trees fitted using the ctree algorithm are displayed on the bottom.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -120,7 +132,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 subtype and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 subtype and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -142,7 +154,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for ten-year overall survival using PAM50 and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using PAM50 and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for ten-year overall survival using PAM50 subtype and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using PAM50 subtype and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 % OS using PAM50 Subtype and the six CNA Burden metrics as candidate predictors
@@ -165,7 +177,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for overall survival using PAM50 and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for overall survival using PAM50 and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for overall survival using PAM50 subtype and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for overall survival using PAM50 subtype and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -187,7 +199,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 subtype and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 subtype and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -209,7 +221,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for ten-year overall survival using PAM50 and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using PAM50 and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for ten-year overall survival using PAM50 subtype and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using PAM50 subtype and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 % OS using IntClust and the six CNA Score metrics as candidate predictors
@@ -232,7 +244,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for overall survival using IntClust and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for overall survival using IntClust and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for overall survival using Integrative Cluster and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for overall survival using Integrative Cluster and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -254,7 +266,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for five-year overall survival using IntClust and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using IntClust and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year overall survival using Integrative Cluster and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using Integrative Cluster and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -276,7 +288,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for ten-year overall survival using IntClust and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using IntClust and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for ten-year overall survival using Integrative Cluster and the six CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using Integrative Cluster and the six CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 % OS using IntClust and the six CNA Burden metrics as candidate predictors
@@ -299,7 +311,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for overall survival using IntClust and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for overall survival using IntClust and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for overall survival using Integrative Cluster and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for overall survival using Integrative Cluster and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -321,7 +333,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for five-year overall survival using IntClust and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using IntClust and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year overall survival using Integrative Cluster and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using Integrative Cluster and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -343,7 +355,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for ten-year overall survival using IntClust and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using IntClust and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for ten-year overall survival using Integrative Cluster and the six CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using Integrative Cluster and the six CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 % OS using PAM50 Subtype, the six CNA Burden metrics and a number of clinical variables as candidate predictors
@@ -366,7 +378,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for overall survival using PAM50, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for overall survival using PAM50, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for overall survival using PAM50 subtype, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for overall survival using PAM50 subtype, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -388,7 +400,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for five-year overall survival using PAM50, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 subtype, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 subtype, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -410,7 +422,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for ten-year overall survival using PAM50, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using PAM50, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for ten-year overall survival using PAM50 subtype, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using PAM50 subtype, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -432,7 +444,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for overall survival using INTCLUST, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for overall survival using INTCLUST, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for overall survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for overall survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -454,7 +466,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for five-year overall survival using INTCLUST, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using INTCLUST, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year overall survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -476,7 +488,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for ten-year overall survival using INTCLUST, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using INTCLUST, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for ten-year overall survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 % Chromosome arm CNA metrics 
@@ -500,7 +512,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for overall survival using PAM50 and the 42 chromosome arm CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for overall survival using PAM50 and the 42 chromosome arm CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for overall survival using PAM50 subtype and the 42 chromosome arm CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for overall survival using PAM50 subtype and the 42 chromosome arm CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -522,7 +534,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 and the 42 chromosome arm CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 and the 42 chromosome arm CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 subtype and the 42 chromosome arm CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 subtype and the 42 chromosome arm CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 
@@ -545,7 +557,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 and the 42 chromosome arm CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 and the 42 chromosome arm CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 subtype and the 42 chromosome arm CNA Score metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 subtype and the 42 chromosome arm CNA Score metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 % OS using PAM50 Subtype and the 42 CNA Burden metrics as candidate predictors
@@ -568,7 +580,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for overall survival using PAM50 and the 42 chromosome arm CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for overall survival using PAM50 and the 42 chromosome arm CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for overall survival using PAM50 subtype and the 42 chromosome arm CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for overall survival using PAM50 subtype and the 42 chromosome arm CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -590,7 +602,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 and the 42 chromosome arm CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 and the 42 chromosome arm CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 subtype and the 42 chromosome arm CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 subtype and the 42 chromosome arm CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -612,7 +624,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{0.5cm}
 
-\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 and the 42 chromosome arm CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 and the 42 chromosome arm CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 subtype and the 42 chromosome arm CNA Burden metrics as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 subtype and the 42 chromosome arm CNA Burden metrics as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 % OS using IntClust and the 42 CNA Score metrics as candidate predictors
@@ -770,7 +782,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for overall survival using PAM50, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for overall survival using PAM50, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for overall survival using PAM50 subtype, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for overall survival using PAM50 subtype, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -792,7 +804,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for five-year overall survival using PAM50, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year overall survival using PAM50 subtype, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using PAM50 subtype, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -814,7 +826,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for ten-year overall survival using PAM50, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using PAM50, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for ten-year overall survival using PAM50 subtype, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using PAM50 subtype, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 % OS using IntClust, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors
@@ -837,7 +849,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for overall survival using INTCLUST, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for overall survival using INTCLUST, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for overall survival using Integrative Cluster, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for overall survival using Integrative Cluster, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -859,7 +871,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for five-year overall survival using INTCLUST, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using INTCLUST, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for five-year overall survival using Integrative Cluster, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for five-year overall survival using Integrative Cluster, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 
 \begin{figure}[!htb]
@@ -881,7 +893,7 @@ Appendix B contains the rpart and ctree survival trees for OS outcomes. These su
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for ten-year overall survival using INTCLUST, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using INTCLUST, te 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for ten-year overall survival using Integrative Cluster, the 42 CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for ten-year overall survival using Integrative Cluster, te 42 CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \end{figure}
 \FloatBarrier
 
@@ -1255,7 +1267,7 @@ RRM2 & Molecular Grade Index gene \\
 
 \markboth{\MakeUppercase{APPENDIX D}}{\MakeUppercase{APPENDIX D}}
 
-Appendix D contains a list of genes that are present in the METABRIC CNA and gene expression data utilised in this thesis but missing from the IntClust gene list. 
+Appendix D contains a list of genes that are present in the METABRIC CNA and gene expression data utilised in this thesis, but missing from the IntClust gene list. 
 
 % IntClust Genes 
 % latex table generated in R 4.3.1 by xtable 1.8-4 package
@@ -1322,6 +1334,7 @@ Appendix D contains a list of genes that are present in the METABRIC CNA and gen
 
    \hline
 \end{xltabular}
+\clearpage
 
 \section*{Appendix E}
 \renewcommand{\thefigure}{E\arabic{figure}}
@@ -1334,7 +1347,7 @@ Appendix D contains a list of genes that are present in the METABRIC CNA and gen
 
 \markboth{\MakeUppercase{APPENDIX E}}{\MakeUppercase{APPENDIX E}}
 
-Appendix E contains (1) the results obtained for the univariate Allele-Independent Intercept Model and Allele-Independent Non-Intercept Model fitted using the \texttt{MCMCglmm()} function (2) the results obtained for the univariate Allele-Dependent Intercept Model and Allele-Dependent Non-Intercept Model fitted using the \texttt{MCMCglmm()} function and (3) the results obtained for the multivariate Allele-Dependent Intercept Model and Allele-Dependent Non-Intercept Model fitted using the \texttt{MCMCglmm()} function.
+Appendix E contains: (1) the results obtained for the univariate Allele-Independent Intercept Model and Allele-Independent Non-Intercept Model fitted using the \texttt{MCMCglmm()} function, (2) the results obtained for the univariate Allele-Dependent Intercept Model and Allele-Dependent Non-Intercept Model fitted using the \texttt{MCMCglmm()} function, and (3) the results obtained for the multivariate Allele-Dependent Intercept Model and Allele-Dependent Non-Intercept Model fitted using the \texttt{MCMCglmm()} function.
 
 \begin{table}[!htb]
     \caption[Univariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{MCMCglmm()}.]{Univariate Allele-Independent Intercept Model parameter estimates fitted using \texttt{MCMCglmm()}. In (A) neutral lengths are recorded as length 0 and in (B) neutral lengths are retained as greater than 0.}
@@ -1524,7 +1537,7 @@ Appendix E contains (1) the results obtained for the univariate Allele-Independe
 
 \begin{table}[!htb]
 \centering
-\caption[Univariate Allele-Dependent Non-Intercept Model parameter estimates and confidence intervals, fitted using \texttt{MCMCglmm()}.]{Univariate Allele-Dependent Non-Intercept Model parameter estimates and confidence intervals fitted using \texttt{MCMCglmm()}, where neutral lengths are recorded as length 0.}
+\caption[Univariate Allele-Dependent Non-Intercept Model parameter estimates and confidence intervals fitted using \texttt{MCMCglmm()}.]{Univariate Allele-Dependent Non-Intercept Model parameter estimates and confidence intervals fitted using \texttt{MCMCglmm()}, where neutral lengths are recorded as length 0.}
       
 \includegraphics[width = 1\textwidth]{../tables/Chapter_5/Univariate_MCMC_6_AD_Model_Pred.png}
 %\label{tab:lm_uni_AD_modpred_6}
@@ -1594,7 +1607,7 @@ Appendix F contains allele-specific heatmaps produced for chromosome 18q and 11p
 \begin{figure}[!htb]
 \centering
 \includegraphics[width = 1\textwidth]{../figures/Chapter_6/Heatmap_Chr18q_Genes_Major.png}
-\caption[Heatmap of CNAs across the Major Allele of Chromosome 18q]{Heatmap of CNAs across the Major Allele of Chromosome 18q. The heatmap depicts the CNA state for each gene across Chromosome 18q, partitioning the patients into the nodes corresponding to Figure \ref{fig:INTCLUST_PA_CNA_Burden_DSS}. NAs, depicting multiple states, are coloured in black.}
+\caption[Heatmap of CNAs across the Major Allele of Chromosome 18q.]{Heatmap of CNAs across the Major Allele of Chromosome 18q. The heatmap depicts the CNA state for each gene across Chromosome 18q, partitioning the patients into the nodes corresponding to Figure \ref{fig:INTCLUST_PA_CNA_Burden_DSS}A. NAs, depicting multiple states, are coloured in black.}
 \label{fig:heatmap_Major_18q}
 \end{figure}
 \vfill 
@@ -1602,41 +1615,41 @@ Appendix F contains allele-specific heatmaps produced for chromosome 18q and 11p
 \begin{figure}[!htb]
 \centering
 \includegraphics[width = 1\textwidth]{../figures/Chapter_6/Heatmap_Chr18q_Genes_Minor.png}
-\caption[Heatmap of CNAs across the Minor Allele of Chromosome 18q]{Heatmap of CNAs across the Minor Allele of Chromosome 18q. The heatmap depicts the CNA state for each gene across Chromosome 18q, partitioning the patients into the nodes corresponding to Figure \ref{fig:INTCLUST_PA_CNA_Burden_DSS}. NAs, depicting multiple states, are coloured in black.}
+\caption[Heatmap of CNAs across the Minor Allele of Chromosome 18q.]{Heatmap of CNAs across the Minor Allele of Chromosome 18q. The heatmap depicts the CNA state for each gene across Chromosome 18q, partitioning the patients into the nodes corresponding to Figure \ref{fig:INTCLUST_PA_CNA_Burden_DSS}A. NAs, depicting multiple states, are coloured in black.}
 \label{fig:heatmap_Minor_18q}
 \end{figure}
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width = 1\textwidth]{../figures/Chapter_6/Heatmap_Chr18q_Genes_Both_Alleles.png}
-\caption[Heatmap of CNAs across both alleles of Chromosome 18q]{Heatmap of CNAs across both alleles of Chromosome 18q. The heatmap depicts the CNA state for each gene across Chromosome 18q, partitioning the patients into the nodes corresponding to Figure \ref{fig:INTCLUST_PA_CNA_Burden_DSS}. NAs, depicting multiple states, are coloured in black.}
+\caption[Heatmap of CNAs across both alleles of Chromosome 18q.]{Heatmap of CNAs across both alleles of Chromosome 18q. The heatmap depicts the CNA state for each gene across Chromosome 18q, partitioning the patients into the nodes corresponding to Figure \ref{fig:INTCLUST_PA_CNA_Burden_DSS}A. NAs, depicting multiple states, are coloured in black.}
 \label{fig:heatmap_Both_18q}
 \end{figure}
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width = 1\textwidth]{../figures/Chapter_6/Heatmap_Chr11p_Genes_Major.png}
-\caption[Heatmap of CNAs across the Major Allele of Chromosome 11p]{Heatmap of CNAs across the Major Allele of Chromosome 11p. The heatmap depicts the CNA state for each gene across Chromosome 11p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_FiveYearDSS}. NAs, depicting multiple states, are coloured in black.}
+\caption[Heatmap of CNAs across the Major Allele of Chromosome 11p.]{Heatmap of CNAs across the Major Allele of Chromosome 11p. The heatmap depicts the CNA state for each gene across Chromosome 11p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_FiveYearDSS}A. NAs, depicting multiple states, are coloured in black.}
 \label{fig:heatmap_Major_11p}
 \end{figure}
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width = 1\textwidth]{../figures/Chapter_6/Heatmap_Chr11p_Genes_Minor.png}
-\caption[Heatmap of CNAs across the Minor Allele of Chromosome 11p]{Heatmap of CNAs across the Minor Allele of Chromosome 11p. The heatmap depicts the CNA state for each gene across Chromosome 11p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_FiveYearDSS}. NAs, depicting multiple states, are coloured in black.}
+\caption[Heatmap of CNAs across the Minor Allele of Chromosome 11p.]{Heatmap of CNAs across the Minor Allele of Chromosome 11p. The heatmap depicts the CNA state for each gene across Chromosome 11p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_FiveYearDSS}A. NAs, depicting multiple states, are coloured in black.}
 \label{fig:heatmap_Minor_11p}
 \end{figure}
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width = 1\textwidth]{../figures/Chapter_6/Heatmap_Chr11p_Genes_Both_Alleles.png}
-\caption[Heatmap of CNAs across both alleles of Chromosome 11p]{Heatmap of CNAs across both alleles of Chromosome 11p. The heatmap depicts the CNA state for each gene across Chromosome 11p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_FiveYearDSS}. NAs, depicting multiple states, are coloured in black.}
+\caption[Heatmap of CNAs across both alleles of Chromosome 11p.]{Heatmap of CNAs across both alleles of Chromosome 11p. The heatmap depicts the CNA state for each gene across Chromosome 11p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_FiveYearDSS}A. NAs, depicting multiple states, are coloured in black.}
 \label{fig:heatmap_Both_11p}
 \end{figure}
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width = 1\textwidth]{../figures/Chapter_6/Chromosome_18q_Barplot_Node.png}
-\caption[Frequency of changepoints in genes across chromosome 18q, split by Node and Category, and coloured by allele.]{Frequency of changepoints in genes across chromosome 18q, split by Node and Category, and coloured by allele.}
+\caption[Frequency of changepoints in genes across chromosome 18q, split by node and category, and coloured by allele.]{Frequency of changepoints in genes across chromosome 18q, split by node and category, and coloured by allele.}
 \label{fig:Barplot_18q}
 \end{figure}

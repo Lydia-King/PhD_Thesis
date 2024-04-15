@@ -15,17 +15,17 @@ Combining the allele-specific CNA states, by adding the individual allele states
 
 \vfill
 \begin{figure}[H]
-\vspace{0.4cm}
+\vspace{0.2cm}
 \centering
 \includegraphics[width = 1\textwidth]{../figures/Chapter_6/Heatmap_Chr3p_Genes_Major.png}
-\caption[Heatmap of CNAs across the Major Allele of Chromosome 3p]{Heatmap of CNAs across the Major Allele of Chromosome 3p. The heatmap depicts the CNA state for each gene across Chromosome 3p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_DSS}. NAs, depicting multiple states, are coloured in black.}
+\caption[Heatmap of CNAs across the Major Allele of Chromosome 3p.]{Heatmap of CNAs across the Major Allele of Chromosome 3p. The heatmap depicts the CNA state for each gene across Chromosome 3p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_DSS}. NAs, depicting multiple states, are coloured in black.}
 \label{fig:heatmap_Major}
 \end{figure}
 \vspace{0.2cm}
 \begin{figure}[H]
 \centering
 \includegraphics[width = 1\textwidth]{../figures/Chapter_6/Heatmap_Chr3p_Genes_Minor.png}
-\caption[Heatmap of CNAs across the Minor Allele of Chromosome 3p]{Heatmap of CNAs across the Minor Allele of Chromosome 3p. The heatmap depicts the CNA state for each gene across Chromosome 3p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_DSS}. NAs, depicting multiple states, are coloured in black.}
+\caption[Heatmap of CNAs across the Minor Allele of Chromosome 3p.]{Heatmap of CNAs across the Minor Allele of Chromosome 3p. The heatmap depicts the CNA state for each gene across Chromosome 3p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_DSS}. NAs, depicting multiple states, are coloured in black.}
 \label{fig:heatmap_Minor}
 \end{figure}
 \vfill 
@@ -33,7 +33,7 @@ Combining the allele-specific CNA states, by adding the individual allele states
 \begin{figure}[H]
 \centering
 \includegraphics[width = 1\textwidth]{../figures/Chapter_6/Heatmap_Chr3p_Genes_Both_Alleles.png}
-\caption[Heatmap of CNAs on both the Major and Minor alleles of Chromosome 3p]{Heatmap of CNAs on both the Major and Minor alleles of Chromosome 3p. The heatmap depicts the CNA state for each gene across Chromosome 3p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_DSS}. NAs, depicting multiple states, are coloured in black.}
+\caption[Heatmap of CNAs on both the Major and Minor alleles of Chromosome 3p.]{Heatmap of CNAs on both the Major and Minor alleles of Chromosome 3p. The heatmap depicts the CNA state for each gene across Chromosome 3p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_DSS}. NAs, depicting multiple states, are coloured in black.}
 \label{fig:heatmap_Both}
 \end{figure}
 
@@ -44,9 +44,9 @@ Figures \ref{fig:heatmap_Major}-\ref{fig:heatmap_Both} indicate that amplificati
 
 The frequency of changepoint events in genes on chromosome 3p, determined by the summation of observed changepoint counts over all patients, within each gene, is provided in Figure \ref{fig:Barplot_3p} where panels provide survival tree node and changepoint category information. These changepoint events, with the potential to disrupt gene function, tend to be observed with similar frequencies across all categories within each node, except for the Amp/Del and Del/Amp categories, which occur less frequently. Again, it is observed that Neut/Del and Del/Neut events occur more often on the Minor allele and Amp/Neut and Neut/Amp events occur more often on the Major allele. 
 
-For Node 2, comprising 1,044 patients for which allele-specific information was available, the frequency of observed changepoints is quite low, with the gene displaying the highest total number of changepoints being 
+For Node 2, comprising 1,044 patients for which allele-specific information was available, the frequency of observed changepoints is quite low, with the gene displaying the highest total number of changepoints being CADM2, displaying 54 changepoints (Table \ref{tbl:Chr3p_Freq}). Node 4 and Node 5, comprising 790 and 127 patients, also display low numbers of changepoints. The gene with the highest frequencies of changepoints in Nodes 4 and 5 are SFMBT1 with 30 changepoints, and CADM2 with 14 changepoints. While it appears that some genes are more susceptible to containing a changepoint, there seems to be no characteristic changepoint pattern that distinguishes patients within nodes.
 
-\begin{figure}[H]
+\begin{figure}[!hp]
 \centering
 
 \includegraphics[width=1\textwidth]{../figures/Chapter_3/PA_Ctree_Survival_Burden_DSS_PAM50.png}
@@ -54,11 +54,9 @@ For Node 2, comprising 1,044 patients for which allele-specific information was 
 \vspace{0.5cm}
 
 \includegraphics[width = 1\textwidth]{../figures/Chapter_6/Chromosome_3p_Barplot_Node.png}
-\caption[Frequency of changepoints in genes across chromosome 3p, split by Node and Category, and coloured by allele.]{Frequency of changepoints in genes across chromosome 3p, split by Node and Category, and coloured by allele. For patients stratified into distinct survival patterns, Nodes 2, 4, and 5 corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_DSS} (figure panel columns), and for each changepoint category (panel rows), the frequency of that changepoint, observed in the each gene across chromosome 3p (x-axis) is plotted. Frequencies of the Major allele are coloured pink and the Minor allele coloured blue.}
+\caption[Frequency of changepoints in genes across chromosome 3p, split by node and category, and coloured by allele.]{Frequency of changepoints in genes across chromosome 3p, split by node and category, and coloured by allele. For patients stratified into distinct survival patterns, Nodes 2, 4, and 5 corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_DSS} (figure panel columns), and for each changepoint category (panel rows), the frequency of that changepoint, observed in the each gene across chromosome 3p (x-axis) is plotted. Frequencies of the Major allele are coloured pink and the Minor allele coloured blue.}
 \label{fig:Barplot_3p}
 \end{figure}
-
-\noindent CADM2, displaying 54 changepoints (Table \ref{tbl:Chr3p_Freq}). Node 4 and Node 5, comprising 790 and 127 patients, also display low numbers of changepoints. The gene with the highest frequencies of changepoints in Nodes 4 and 5 are SFMBT1 with 30 changepoints, and CADM2 with 14 changepoints. While it appears that some genes are more susceptible to containing a changepoint, there seems to be no characteristic changepoint pattern that distinguishes patients within nodes.
 
 \begin{table}[!htb]
 \caption[Top 10 genes on chromosome 3p with highest frequency of changepoints for patients in Nodes 2, 4 and 5.]{Top 10 genes on chromosome 3p with highest frequency of changepoints for patients in (A) Node 2, (B) Node 4, and (C) Node 5.}
@@ -81,7 +79,7 @@ Chromosome 18q (Appendix F) and 11p (Figure \ref{fig:Barplot_11p}) also indicate
 \vspace{0.5cm}
 
 \includegraphics[width = 1\textwidth]{../figures/Chapter_6/Chromosome_11p_Barplot_Node.png}
-\caption[Frequency of changepoints in genes across chromosome 11p, split by Node and Category, and coloured by allele.]{Frequency of changepoints in genes across chromosome 11p, split by Node and Category, and coloured by allele. For patients stratified into distinct survival patterns, Nodes 3, 4, 7, 8 and 9, corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_FiveYearDSS} (figure panel columns), and for each changepoint category (panel rows), the frequency of that changepoint, observed in the each gene across chromosome 11p (x-axis) is plotted. Frequencies of the Major allele are coloured pink and the Minor allele coloured blue.}
+\caption[Frequency of changepoints in genes across chromosome 11p, split by node and category, and coloured by allele.]{Frequency of changepoints in genes across chromosome 11p, split by node and category, and coloured by allele. For patients stratified into distinct survival patterns, Nodes 3, 4, 7, 8 and 9, corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_FiveYearDSS} (figure panel columns), and for each changepoint category (panel rows), the frequency of that changepoint, observed in the each gene across chromosome 11p (x-axis) is plotted. Frequencies of the Major allele are coloured pink and the Minor allele coloured blue.}
 \label{fig:Barplot_11p}
 \end{figure}
 
@@ -164,7 +162,7 @@ Exploring further the identified point of focus, Del/Amp changepoint on the Majo
 \vspace{6cm}
 \caption[Top 20 genes containing largest changepoints of significant length with $n > 30$ and $LB > 10,000$kb.]{Top 20 genes containing largest changepoints of significant length with $n > 30$ and $LB > 10,000$kb. Models fitted using (A) \texttt{MCMCglmm()} and (B) \texttt{lm()} functions.}
 \centering
-\includegraphics[width = 0.48\textwidth, align = c]{../tables/Chapter_6/Gene_MCMC_1_Thesis.png}
+\includegraphics[width = 0.48\textwidth]{../tables/Chapter_6/Gene_MCMC_1_Thesis.png}
 \includegraphics[width = 0.48\textwidth]{../tables/Chapter_6/Gene_LM_1_Thesis.png}
 \label{tab:TopLength_Genes_1}
 \end{table}
@@ -198,7 +196,7 @@ Out of 603 segmented regions of $d$=5,000kb, nine do not display any changepoint
 \begin{figure}[!hp]
 \centering
 \includegraphics[width = 1\textwidth, height = 22cm]{../figures/Chapter_6/PerSegments_MCMC_10kb_fivemillion_Thesis.png}
-\caption[Application of multivariate Allele-Dependent Intercept Model to each segment, providing prediction intervals for each category and allele. Significance determined by $LB > 10$kb.]{Application of multivariate Allele-Dependent Intercept Model to each segment, providing prediction intervals for each category and allele. Each panel, corresponding to chromosome and allele, displays significance of changepoint, determined by $LB > 10$kb. NoCP corresponds to NoChangepoint. Fitted using the \texttt{MCMCglmm()} function.}
+\caption[Application of multivariate Allele-Dependent Intercept Model to each segment, providing confidence intervals for each category and allele. Significance determined by $LB > 10$kb.]{Application of multivariate Allele-Dependent Intercept Model to each segment, providing confidence intervals for each category and allele. Each panel, corresponding to chromosome and allele, displays significance of changepoint, determined by $LB > 10$kb. NoCP corresponds to NoChangepoint. Fitted using the \texttt{MCMCglmm()} function.}
 \label{fig:PerSegment_MCMC}
 \end{figure}
 %\FloatBarrier
@@ -211,7 +209,7 @@ Table \ref{tab:TopLength_Seg_1} provides information on the 20 non-unique genomi
 \begin{figure}[H]
 \centering
 \includegraphics[width = 1\textwidth, height = 22cm]{../figures/Chapter_6/PerSegments_MCMC_10000kb_fivemillion_Thesis.png}
-\caption[Application of multivariate Allele-Dependent Intercept Model to each segment, providing prediction intervals for each category and allele. Significance determined by $LB > 10,000$kb.]{Application of multivariate Allele-Dependent Intercept Model to each segment, providing prediction intervals for each category and allele. Each panel, corresponding to chromosome and allele, displays significance of changepoint, determined by $LB > 10,000$kb. NoCP corresponds to NoChangepoint. Fitted using the \texttt{MCMCglmm()} function.}
+\caption[Application of multivariate Allele-Dependent Intercept Model to each segment, providing confidence intervals for each category and allele. Significance determined by $LB > 10,000$kb.]{Application of multivariate Allele-Dependent Intercept Model to each segment, providing confidence intervals for each category and allele. Each panel, corresponding to chromosome and allele, displays significance of changepoint, determined by $LB > 10,000$kb. NoCP corresponds to NoChangepoint. Fitted using the \texttt{MCMCglmm()} function.}
 \label{fig:PerSegment_MCMC_10000}
 \end{figure}
 
@@ -236,7 +234,7 @@ Exploring further the identified points of focus, Neut/Amp changepoint on the Ma
 \label{fig:TopLength_Segments_Surv}
 \end{figure}
 
-\subsection{Conclusion}
+\subsection{Conclusions}
 Allele-specific copy number profiling provides information on genome wide copy number for each allele and tackles some of the limitations of total copy number profiling, including masking of changepoints and being unable to detect certain types of genomic aberrations, such as LOH and copy number-neutral events.
 
 In this chapter we produced allele-specific copy number profiles (ASCAT profiles) for 1,984 METABRIC patients. Comparing allele-specific copy number profiles to the total copy number profiles, as produced in Chapter 3, using heatmaps of CNA states, similarities were observed, but the allele-specific copy number offered additional insight by displaying high level of amplifications, possibly indicative of whole genome or chromosome duplication. 

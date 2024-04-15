@@ -189,13 +189,13 @@ In the model using Absolute CNA Score Quartiles the reference group is Luminal A
 
 
 \begin{table}[!htb]
-\caption[Association tests between CNA Score and selected clinical variables.]{Association tests between CNA Score and selected clinical variables. Kruskal-Wallis and Pearson's Correlation p-values and Benjamini-Hochberg adjusted p-values are displayed.}
+\caption[Association tests between Absolute CNA Score and selected clinical variables.]{Association tests between Absolute CNA Score and selected clinical variables. Kruskal-Wallis and Pearson's Correlation p-values and Benjamini-Hochberg adjusted p-values are displayed.}
 \includegraphics[width=0.98\textwidth]{../tables/Chapter_3/CNA_Score_Clin_Association.png}
 \label{tab:Assoc_Tests_S}
 \end{table}
 
 \begin{table}[!htb]
-\caption[Association tests between CNA Quartiles and selected clinical variables.]{Association tests between CNA Quartiles and selected clinical variables. $\chi^2$, Fisher's Exact and Kruskal-Wallis test p-values and Benjamini-Hochberg adjusted p-values are displayed.}
+\caption[Association tests between Absolute CNA Score Quartiles and selected clinical variables.]{Association tests between Absolute CNA Score Quartiles and selected clinical variables. $\chi^2$, Fisher's Exact and Kruskal-Wallis test p-values and Benjamini-Hochberg adjusted p-values are displayed.}
 \includegraphics[width=0.98\textwidth]{../tables/Chapter_3/CNA_Quartile_Clin_Association.png}
 \label{tab:Assoc_Tests_Q}
 \end{table}
@@ -323,7 +323,7 @@ Overall, the survival trees indicate that the Absolute CNA Score metric, impleme
 \subsection{Analysis of Global CNA Metrics across All METABRIC Patients}
 Expanding the study focus to all patients, i.e. all PAM50 subtypes (Basal, HER2, Luminal B, Luminal A, Normal and Claudin-low), associations between the six global CNA Score metrics and six global CNA Burden metrics with survival are examined in this section. The global CNA metrics are initially included with PAM50 subtype or IntClust molecular classifications to assess whether the CNA metric information can add additional prognostic value to the molecular classifications, and then included with a selection of clinical variables to explore interactions between the clinical variables and CNA metrics. Given the large number of candidate predictors under consideration, the fact that the CPH assumption may not be met, and the benefit of the partitioning trees in determining optimal cut-off, recursive partitioning survival trees are implemented. 
 
-\subsubsection{CNA Metric Survival Trees, in Combination with Molecular Classification Predictors} 
+\subsubsection{CNA Metric Survival Trees in Combination with Molecular Classification Predictors} 
 A range of survival trees for OS, DSS, 5-year OS and DSS, and 10-year OS and DSS are produced. These trees include the six global CNA Score metrics: Absolute CNA Score, CNA Amp Score, CNA Del Score, Difference Score, Percentage Amp Score and Percentage Del Score, or the six global CNA Burden metrics: CNA Burden, CNA Amp Burden, CNA Del Burden, Difference Burden, Percentage Amp Burden and Percentage Del Burden, with PAM50 subtype or IntClust molecular classifications. Depending on the algorithm used (rpart or ctree) a number of different global CNA Score and Burden metrics are selected as useful predictors when modelling survival outcomes. The survival trees for DSS outcomes are displayed and discussed below, while the survival trees for OS outcomes are provided in Appendix B. 
 
 Initially survival trees including only PAM50 subtype (Figure \ref{fig:PAM50_Indv_Surv_Trees}) or IntClust (Figure \ref{fig:IC_Indv_Surv_Trees}) as candidate predictors are fitted, indicating which subtypes display similarity in survival outcome and providing information on partitions in trees where only molecular classification is included.
@@ -737,7 +737,7 @@ It appears that the CNA Del Score and Burden metrics are associated with DSS, 5-
 
 \vspace{1cm}
 
-\caption[Recursive partitioning survival trees for disease-specific survival using Integrative Cluster the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for disease-specific survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
+\caption[Recursive partitioning survival trees for disease-specific survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors.]{Recursive partitioning survival trees for disease-specific survival using Integrative Cluster, the six CNA Burden metrics and a number of clinical variables as candidate predictors. (A) Trees fitted using the rpart algorithm and (B) trees fitted using the ctree algorithm.}
 \label{fig:INTCLUST_CNA_Burden_DSS_Clin}
 \end{figure}
 
@@ -787,7 +787,7 @@ It appears that the CNA Del Score and Burden metrics are associated with DSS, 5-
 \label{fig:INTCLUST_CNA_Burden_TenYearDSS_Clin}
 \end{figure}
 
-\subsubsection{CNA Metric Survival Trees, in Combination with Molecular Classification and Clinical Predictors}
+\subsubsection{CNA Metric Survival Trees in Combination with Molecular Classification and Clinical Predictors}
 To assess how the addition of clinical variables alters the observed partitioning and explore interactions between the clinical variables and CNA metrics in modelling DSS, 5-year DSS and 10-year DSS, survival trees including the six CNA Burden metrics, IntClust or PAM50 molecular classification, and selected clinical variables as candidate predictors are fitted (Figures \ref{fig:PAM50_CNA_Burden_DSS_Clin}-\ref{fig:INTCLUST_CNA_Burden_TenYearDSS_Clin}). To avoid overcrowding, these trees are limited to a depth of four, where depth is defined as the number of layers or levels in the tree. While the CNA Score and CNA Burden trees partition the data similarly, it is observed that there is more consensus among the CNA Burden trees produced across different survival times and using different algorithms. Based on this and the fact that CNA Burden is a standardised metric, i.e. all patients have CNA Burden in the range 0 to 100, we show only the survival trees including CNA Burden, IntClust or PAM50 molecular classification, and selected clinical variables, as candidate predictors. The clinical variables selected are number of positive lymph nodes, NPI, ER Status, PR Status, HER2 Status, age, tumour size, tumour stage, tumour grade and cancer type.  
 
 Figures \ref{fig:PAM50_CNA_Burden_DSS_Clin}-\ref{fig:PAM50_CNA_Burden_TenYearDSS_Clin} display survival trees for DSS, 5-year DSS and 10-year DSS, that have the six CNA Burden metrics, PAM50 molecular classification and the selected clinical variables as candidate predictors. It is observed that total CNA Burden, CNA Del Burden and Percentage Amp Burden, appear as significant predictors in the context of the DSS, in addition to PAM50 subtype and a number of clinical variables including NPI, number of positive lymph nodes, age and ER status.
@@ -1261,14 +1261,14 @@ There are two important aspects of the data used to produce these heatmaps, incl
 \vspace{0.7cm}
   \centering
   \includegraphics[width=1\textwidth]{../figures/Chapter_3/PA_Ctree_Survival_Burden_DSS_PAM50.png_3p_All_Heatmap.png}
-  \caption[Heatmap of CNAs across Chromosome 3p]{Heatmap of CNAs across Chromosome 3p. The heatmap depicts the CNA state for each gene across Chromosome 3p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_DSS}B.}
+  \caption[Heatmap of CNAs across Chromosome 3p.]{Heatmap of CNAs across Chromosome 3p. The heatmap depicts the CNA state for each gene across Chromosome 3p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_DSS}B.}
   \label{PA_SurvTrees_Burden_Heatmaps_3p}
 \end{figure}
 \vspace{1cm}
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{../figures/Chapter_3/PA_PartyKit_Survival_Burden_DSS_INTCLUST.png_18q_All_Heatmap.png}
-  \caption[Heatmap of CNAs across Chromosome 18q]{Heatmap of CNAs across Chromosome 18q. The heatmap depicts the CNA state for each gene across Chromosome 18q, partitioning the patients into the nodes corresponding to Figure \ref{fig:INTCLUST_PA_CNA_Burden_DSS}A.}
+  \caption[Heatmap of CNAs across Chromosome 18q.]{Heatmap of CNAs across Chromosome 18q. The heatmap depicts the CNA state for each gene across Chromosome 18q, partitioning the patients into the nodes corresponding to Figure \ref{fig:INTCLUST_PA_CNA_Burden_DSS}A.}
   \label{PA_SurvTrees_Burden_Heatmaps_18q}
 \end{figure} 
 
@@ -1277,7 +1277,7 @@ There are two important aspects of the data used to produce these heatmaps, incl
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{../figures/Chapter_3/PA_PartyKit_Survival_Burden_FiveYearDSS_PAM50.png_11p_All_Heatmap.png}
-  \caption[Heatmap of CNAs across Chromosome 11p]{Heatmap of CNAs across Chromosome 11p. The heatmap depicts the CNA state for each gene across Chromosome 11p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_FiveYearDSS}A.}
+  \caption[Heatmap of CNAs across Chromosome 11p.]{Heatmap of CNAs across Chromosome 11p. The heatmap depicts the CNA state for each gene across Chromosome 11p, partitioning the patients into the nodes corresponding to Figure \ref{fig:PAM50_PA_CNA_Burden_FiveYearDSS}A.}
   \label{PA_SurvTrees_Burden_Heatmaps_11p}
 \end{figure}
 
