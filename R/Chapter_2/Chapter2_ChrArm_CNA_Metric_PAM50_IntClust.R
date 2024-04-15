@@ -45,13 +45,13 @@ Clinical <-
 
 Clinical$PATIENT_ID <- gsub("\\-", ".", Clinical$PATIENT_ID)
 Clinical <- Clinical %>%
-    mutate(
-        CLAUDIN_SUBTYPE = ifelse(CLAUDIN_SUBTYPE == "NC", NA, CLAUDIN_SUBTYPE),
-        CLAUDIN_SUBTYPE = ifelse(
-            CLAUDIN_SUBTYPE == "claudin-low",
-            "Claudin-low",
-            CLAUDIN_SUBTYPE
-        )
+    mutate(CLAUDIN_SUBTYPE = case_when(CLAUDIN_SUBTYPE  == "Basal" ~ "Basal",
+                                       CLAUDIN_SUBTYPE  == "claudin-low" ~ "Claudin-low",
+                                       CLAUDIN_SUBTYPE  == "Her2" ~ "HER2",
+                                       CLAUDIN_SUBTYPE  == "LumA" ~ "LumA",
+                                       CLAUDIN_SUBTYPE  == "LumB" ~ "LumB",
+                                       CLAUDIN_SUBTYPE  == "Normal" ~ "Normal",
+                                       CLAUDIN_SUBTYPE  == "NC" ~ NA)
     )
 
 Clinical$INTCLUST <-
@@ -240,24 +240,24 @@ CNA_Arm_Burden_All_With_MC_Melted <-
     mutate(
         variable = recode(
             variable,
-            "CNA_Del_All_3p" = "Deletion Burden 3p",
-            "CNA_Del_All_4p" = "Deletion Burden 4p",
-            "CNA_Del_All_5q" = "Deletion Burden 5q",
-            "CNA_Del_All_15q" = "Deletion Burden 15q",
-            "CNA_Amp_All_3q" = "Amplification Burden 3q",
-            "CNA_Amp_All_10p" = "Amplification Burden 10p"
+            "CNA_Del_All_3p" = "CNA Del Burden 3p",
+            "CNA_Del_All_4p" = "CNA Del Burden 4p",
+            "CNA_Del_All_5q" = "CNA Del Burden 5q",
+            "CNA_Del_All_15q" = "CNA Del Burden 15q",
+            "CNA_Amp_All_3q" = "CNA Amp Burden 3q",
+            "CNA_Amp_All_10p" = "CNA Amp Burden 10p"
             
         )
     ) %>%
     mutate(value = ifelse(
         variable %in% c(
-            "Deletion Burden 3p",
-            "Deletion Burden 4p",
-            "Deletion Burden 5q",
-            "Deletion Burden 14q",
-            "Deletion Burden 15q",
-            "Amplification Burden 3q",
-            "Amplification Burden 10p"
+            "CNA Del Burden 3p",
+            "CNA Del Burden 4p",
+            "CNA Del Burden 5q",
+            "CNA Del Burden 14q",
+            "CNA Del Burden 15q",
+            "CNA Amp Burden 3q",
+            "CNA Amp Burden 10p"
         ),
         abs(value),
         value
@@ -476,17 +476,17 @@ CNA_Arm_Burden_All_With_MC_Melted <-
     mutate(
         variable = recode(
             variable,
-            "CNA_Amp_All_1q" = "Amplification Burden 1q",
-            "CNA_Amp_All_17q" = "Amplification Burden 17q",
-            "CNA_Amp_All_8q" = "Amplification Burden 8q",
-            "CNA_Del_All_8p" = "Deletion Burden 8p",
-            "CNA_Del_All_17p" = "Deletion Burden 17p",
-            "CNA_Del_All_17q" = "Deletion Burden 17q"
+            "CNA_Amp_All_1q" = "CNA Amp Burden 1q",
+            "CNA_Amp_All_17q" = "CNA Amp Burden 17q",
+            "CNA_Amp_All_8q" = "CNA Amp Burden 8q",
+            "CNA_Del_All_8p" = "CNA Del Burden 8p",
+            "CNA_Del_All_17p" = "CNA Del Burden 17p",
+            "CNA_Del_All_17q" = "CNA Del Burden 17q"
         )
     ) %>%
     mutate(value = ifelse(
-        variable %in% c("Deletion Burden 8p", "Deletion Burden 17p",
-                        "Deletion Burden 17q"),
+        variable %in% c("CNA Del Burden 8p", "CNA Del Burden 17p",
+                        "CNA Del Burden 17q"),
         abs(value),
         value
     ))
@@ -704,18 +704,18 @@ CNA_Arm_Burden_All_With_MC_Melted<-
     mutate(
         variable = recode(
             variable,
-            "CNA_Amp_All_16p" = "Amplification Burden 16p",
-            "CNA_Del_All_16q" = "Deletion Burden 16q",
-            "CNA_Del_All_11q" = "Deletion Burden 11q",
-            "CNA_Del_All_13q" = "Deletion Burden 13q",
+            "CNA_Amp_All_16p" = "CNA Amp Burden 16p",
+            "CNA_Del_All_16q" = "CNA Del Burden 16q",
+            "CNA_Del_All_11q" = "CNA Del Burden 11q",
+            "CNA_Del_All_13q" = "CNA Del Burden 13q",
         )
     ) %>%
     mutate(value = ifelse(
         variable %in% c(
-            "Deletion Burden 8p",
-            "Deletion Burden 16q",
-            "Deletion Burden 11q",
-            "Deletion Burden 13q"
+            "CNA Del Burden 8p",
+            "CNA Del Burden 16q",
+            "CNA Del Burden 11q",
+            "CNA Del Burden 13q"
         ),
         abs(value),
         value
@@ -1057,8 +1057,8 @@ CNA_Arm_Burden_All_With_MC_Melted <-
     mutate(
         variable = recode(
             variable,
-            "CNA_Del_All_3p" = "Deletion Burden 3p",
-            "CNA_Del_All_4p" = "Deletion Burden 4p"
+            "CNA_Del_All_3p" = "CNA Del Burden 3p",
+            "CNA_Del_All_4p" = "CNA Del Burden 4p"
         )
     )
 
@@ -1068,7 +1068,7 @@ CNA_Arm_Burden_All_With_MC_Melted %>%
     scale_fill_viridis(discrete = TRUE) +
     facet_wrap( ~ variable, ncol = 2, scales = "free") +
     scale_color_viridis(discrete = TRUE) +
-    ggtitle("Density Plot of CNA Amplificaiton Burden Metrics by IntClust") +
+    ggtitle("Density Plot of CNA Burden Metrics by IntClust") +
     ylab("Subtype") +
     xlab("CNA Burden Metrics") +
     theme(
@@ -1238,22 +1238,22 @@ CNA_Arm_Burden_All_With_MC_Melted <-
     mutate(
         variable = recode(
             variable,
-            "CNA_Amp_All_4p" = "Amplification Burden 1q",
-            "CNA_Del_All_4p" = "Deletion Burden 4p",
-            "CNA_Del_All_5q" = "Deletion Burden 5q",
-            "CNA_Amp_All_16p" = "Amplification Burden 16p",
-            "CNA_Del_All_16q" = "Deletion Burden 16q",
-            "CNA_Amp_All_17p" = "Amplification Burden 17q",
+            "CNA_Amp_All_4p" = "CNA Amp Burden 1q",
+            "CNA_Del_All_4p" = "CNA Del Burden 4p",
+            "CNA_Del_All_5q" = "CNA Del Burden 5q",
+            "CNA_Amp_All_16p" = "CNA Amp Burden 16p",
+            "CNA_Del_All_16q" = "CNA Del Burden 16q",
+            "CNA_Amp_All_17p" = "CNA Amp Burden 17q",
         )
     ) %>%
     mutate(value = ifelse(
         variable %in% c(
-            "Amplification Burden 1q",
-            "Deletion Burden 4p",
-            "Deletion Burden 5q",
-            "Amplification Burden 16p",
-            "Deletion Burden 16q",
-            "Amplification Burden 17q"
+            "CNA Amp Burden 1q",
+            "CNA Del Burden 4p",
+            "CNA Del Burden 5q",
+            "CNA Amp Burden 16p",
+            "CNA Del Burden 16q",
+            "CNA Amp Burden 17q"
         ),
         abs(value),
         value
@@ -1334,19 +1334,19 @@ CNA_Arm_Burden_All_With_MC_Melted <-
     mutate(
         variable = recode(
             variable,
-            "CNA_Amp_All_1q" = "Amplification Burden 1q",
-            "CNA_Del_All_8q" = "Deletion Burden 5q",
-            "CNA_Amp_All_16p" = "Amplification Burden 16p",
-            "CNA_Amp_All_17q" = "Amplification Burden 17q",
+            "CNA_Amp_All_1q" = "CNA Amp Burden 1q",
+            "CNA_Del_All_8q" = "CNA Del Burden 5q",
+            "CNA_Amp_All_16p" = "CNA Amp Burden 16p",
+            "CNA_Amp_All_17q" = "CNA Amp Burden 17q",
         )
     ) %>%
     mutate(value = ifelse(
         variable %in% c(
             
-            "Amplification Burden 1q",
-            "Deletion Burden 5q",
-            "Amplification Burden 16p",
-            "Amplification Burden 17q"
+            "CNA Amp Burden 1q",
+            "CNA Del Burden 5q",
+            "CNA Amp Burden 16p",
+            "CNA Amp Burden 17q"
             
         ),
         abs(value),

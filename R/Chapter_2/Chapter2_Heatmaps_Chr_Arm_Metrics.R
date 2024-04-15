@@ -29,8 +29,8 @@ CNA_Score_metrics_grep <-
 Names_Score <-
     c(
         "CNA \nScore",
-        "Amp\nScore",
-        "Del\nScore",
+        "CNA\nAmp\nScore",
+        "CNA\nDel\nScore",
         "Difference \nScore",
         "% Amplification \nScore",
         "% Deletion \nScore"
@@ -47,8 +47,8 @@ CNA_Burden_metrics_grep <-
 Names_Burden <-
     c(
         "CNA \nBurden",
-        "Amp\nBurden",
-        "Del\nBurden",
+        "CNA\nAmp\nBurden",
+        "CNA\nDel\nBurden",
         "Difference \nBurden",
         "% Amplification \nBurden",
         "% Deletion \nBurden"
@@ -78,8 +78,8 @@ CNA_Score_Labels_2 <-
 CNA_Burden_Labels <-
     c(
         "(B) Heatmap of CNA Burden on each Chromosome Arm",
-        "(B) Heatmap of CNA Amplification Burden on each Chromosome Arm",
-        "(B) Heatmap of CNA Deletion Burden on each Chromosome Arm",
+        "(B) Heatmap of CNA Amp Burden on each Chromosome Arm",
+        "(B) Heatmap of CNA Del Burden on each Chromosome Arm",
         "(B) Heatmap of CNA Difference Burden on each Chromosome Arm",
         "(B) Heatmap of Percentage CNA Amplification Burden on each Chromosome Arm",
         "(B) Heatmap of Percentage CNA Deletion Burden on each Chromosome Arm"
@@ -88,8 +88,8 @@ CNA_Burden_Labels <-
 CNA_Burden_Labels_2 <-
     c(
         "(A) Heatmap of CNA Burden on each Chromosome Arm",
-        "(A) Heatmap of CNA Amplification Burden on each Chromosome Arm",
-        "(A) Heatmap of CNA Deletion Burden on each Chromosome Arm",
+        "(A) Heatmap of CNA Amp Burden on each Chromosome Arm",
+        "(A) Heatmap of CNA Del Burden on each Chromosome Arm",
         "(A) Heatmap of CNA Difference Burden on each Chromosome Arm",
         "(A) Heatmap of Percentage CNA Amplification Burden on each Chromosome Arm",
         "(A) Heatmap of Percentage CNA Deletion Burden on each Chromosome Arm"

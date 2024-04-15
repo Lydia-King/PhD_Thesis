@@ -48,11 +48,11 @@ CNA_Score_Metrics_With_MC_Melted <-
         variable = recode(
             variable,
             "CNA_Score_All" = "Absolute CNA Score",
-            "Amp_Score_All" = "Amplification Score",
-            "Del_Score_All" = "Deletion Score",
+            "Amp_Score_All" = "CNA Amp Score",
+            "Del_Score_All" = "CNA Del Score",
             "Difference_Score_All" = "Difference",
-            "Percentage_Score_Amp_All" = "% CNA Score Amplified",
-            "Percentage_Score_Del_All" = "% CNA Score Deleted"
+            "Percentage_Score_Amp_All" = "% Amp Score",
+            "Percentage_Score_Del_All" = "% Del Score"
         )
     )
 
@@ -136,11 +136,11 @@ CNA_Burden_Metrics_With_MC_Melted <-
         variable = recode(
             variable,
             "CNA_Burden_All" = "CNA Burden",
-            "Amp_Burden_All" = "Amplification Burden",
-            "Del_Burden_All" = "Deletion Burden",
+            "Amp_Burden_All" = "CNA Amp Burden",
+            "Del_Burden_All" = "CNA Del Burden",
             "Difference_Burden_All" = "Difference",
-            "Percentage_Burden_Amp_All" = "% CNA Burden Amplified",
-            "Percentage_Burden_Del_All" = "% CNA Burden Deleted"
+            "Percentage_Burden_Amp_All" = "% Amp Burden",
+            "Percentage_Burden_Del_All" = "% Del Burden"
         )
     )
 

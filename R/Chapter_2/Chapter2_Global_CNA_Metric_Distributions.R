@@ -41,8 +41,8 @@ CNA_Score_Metrics_All %>%
         "CNA Amp Score" = Amp_Score_All,
         "CNA Del Score" = Del_Score_All,
         "Difference Score" = Difference_Score_All,
-        "Percentage Score Amp" = Percentage_Score_Amp_All,
-        "Percentage Score Del" = Percentage_Score_Del_All
+        "Percentage Amp Score" = Percentage_Score_Amp_All,
+        "Percentage Del Score" = Percentage_Score_Del_All
     ) %>%
     melt() %>%
     rename("CNA Score Metric" = variable) %>%
@@ -92,8 +92,8 @@ CNA_Score_Metrics_CCA %>%
         "CNA Amp Score" = Amp_Score_CCA,
         "CNA Del Score" = Del_Score_CCA,
         "Difference Score" = Difference_Score_CCA,
-        "Percentage Score Amp" = Percentage_Score_Amp_CCA,
-        "Percentage Score Del" = Percentage_Score_Del_CCA
+        "Percentage Amp Score" = Percentage_Score_Amp_CCA,
+        "Percentage Del Score" = Percentage_Score_Del_CCA
     ) %>%
     melt() %>%
     rename("CNA Score Metric" = variable) %>%
@@ -143,8 +143,8 @@ CNA_Burden_Metrics_All %>%
         "CNA Amp Burden" = Amp_Burden_All,
         "CNA Del Burden" = Del_Burden_All,
         "Difference Burden" = Difference_Burden_All,
-        "Percentage Burden Amp" = Percentage_Burden_Amp_All,
-        "Percentage Burden Del" = Percentage_Burden_Del_All
+        "Percentage Amp Burden" = Percentage_Burden_Amp_All,
+        "Percentage Del Burden" = Percentage_Burden_Del_All
     ) %>%
     melt() %>%
     rename("CNA Burden Metric" = variable) %>%
@@ -194,8 +194,8 @@ CNA_Burden_Metrics_CCA %>%
         "CNA Amp Burden" = Amp_Burden_CCA,
         "CNA Del Burden" = Del_Burden_CCA,
         "Difference Burden" = Difference_Burden_CCA,
-        "Percentage Burden Amp" = Percentage_Burden_Amp_CCA,
-        "Percentage Burden Del" = Percentage_Burden_Del_CCA
+        "Percentage Amp Burden" = Percentage_Burden_Amp_CCA,
+        "Percentage Del Burden" = Percentage_Burden_Del_CCA
     ) %>%
     melt() %>%
     rename("CNA Burden Metric" = variable) %>%
@@ -270,16 +270,16 @@ Plot_CNA_Score <-
             State,
             "CNA_Score_All" = "Absolute CNA Score",
             "CNA_Score_CCA" = "Absolute CNA Score",
-            "Amp_Score_All" = "Amplification Score",
-            "Amp_Score_CCA" = "Amplification Score",
-            "Del_Score_All" = "Deletion Score",
-            "Del_Score_CCA" = "Deletion Score",
+            "Amp_Score_All" = "CNA Amp Score",
+            "Amp_Score_CCA" = "CNA Amp Score",
+            "Del_Score_All" = "CNA Del Score",
+            "Del_Score_CCA" = "CNA Del Score",
             "Difference_Score_All" = "Difference",
             "Difference_Score_CCA" = "Difference",
-            "Percentage_Score_Amp_All" = "% CNA Score Amplified",
-            "Percentage_Score_Amp_CCA" = "% CNA Score Amplified",
-            "Percentage_Score_Del_All" = "% CNA Score Deleted",
-            "Percentage_Score_Del_CCA" = "% CNA Score Deleted"
+            "Percentage_Score_Amp_All" = "% Amp Score",
+            "Percentage_Score_Amp_CCA" = "% Amp Score",
+            "Percentage_Score_Del_All" = "% Del Score",
+            "Percentage_Score_Del_CCA" = "% Del Score"
         )
     ) %>%
     mutate(., State = factor(
@@ -287,10 +287,10 @@ Plot_CNA_Score <-
         levels = c(
             'Absolute CNA Score',
             'Difference',
-            'Amplification Score',
-            'Deletion Score',
-            '% CNA Score Amplified',
-            "% CNA Score Deleted"
+            'CNA Amp Score',
+            'CNA Del Score',
+            '% Amp Score',
+            "% Del Score"
         )
     )) %>%
     mutate(., variable = factor(
@@ -383,16 +383,16 @@ Plot_CNA_Burden <-
             State,
             "CNA_Burden_All" = "CNA Burden",
             "CNA_Burden_CCA" = "CNA Burden",
-            "Amp_Burden_All" = "Amplification Burden",
-            "Amp_Burden_CCA" = "Amplification Burden",
-            "Del_Burden_All" = "Deletion Burden",
-            "Del_Burden_CCA" = "Deletion Burden",
+            "Amp_Burden_All" = "CNA Amp Burden",
+            "Amp_Burden_CCA" = "CNA Amp Burden",
+            "Del_Burden_All" = "CNA Del Burden",
+            "Del_Burden_CCA" = "CNA Del Burden",
             "Difference_Burden_All" = "Difference",
             "Difference_Burden_CCA" = "Difference",
-            "Percentage_Burden_Amp_All" = "% CNA Burden Amplified",
-            "Percentage_Burden_Amp_CCA" = "% CNA Burden Amplified",
-            "Percentage_Burden_Del_All" = "% CNA Burden Deleted",
-            "Percentage_Burden_Del_CCA" = "% CNA Burden Deleted"
+            "Percentage_Burden_Amp_All" = "% Amp Burden",
+            "Percentage_Burden_Amp_CCA" = "% Amp Burden",
+            "Percentage_Burden_Del_All" = "% Del Burden",
+            "Percentage_Burden_Del_CCA" = "% Del Burden"
         )
     ) %>%
     mutate(., State = factor(
@@ -400,10 +400,10 @@ Plot_CNA_Burden <-
         levels = c(
             'CNA Burden',
             'Difference',
-            'Amplification Burden',
-            'Deletion Burden',
-            '% CNA Burden Amplified',
-            "% CNA Burden Deleted"
+            'CNA Amp Burden',
+            'CNA Del Burden',
+            '% Amp Burden',
+            "% Del Burden"
         )
     )) %>%
     mutate(., variable = factor(
@@ -518,19 +518,19 @@ Overlap_CNA_Burden <-
 Overlap_CNA_Score[, 1] <-
     c(
         "Absolute CNA Score",
-        "CNA Deletion Score",
-        "CNA Amplification Score",
-        "% CNA Score Amplified",
-        "% CNA Score Deleted",
+        "CNA Del Score",
+        "CNA Amp Score",
+        "% Amp Score",
+        "% Del Score",
         "Difference Score"
     )
 
 Overlap_CNA_Burden[, 1] <- c(
     "CNA Burden",
-    "CNA Deletion Burden",
-    "CNA Amplification Burden",
-    "% CNA Burden Amplified",
-    "% CNA Burden Deleted",
+    "CNA Del Burden",
+    "CNA Amp Burden",
+    "% Amp Burden",
+    "% Del Burden",
     "Difference Burden"
 )
 

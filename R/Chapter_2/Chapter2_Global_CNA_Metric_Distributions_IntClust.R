@@ -46,11 +46,11 @@ CNA_Score_Metrics_With_MC_Melted <-
         variable = recode(
             variable,
             "CNA_Score_All" = "Absolute CNA Score",
-            "Amp_Score_All" = "Amplification Score",
-            "Del_Score_All" = "Deletion Score",
+            "Amp_Score_All" = "CNA Amp Score",
+            "Del_Score_All" = "CNA Del Score",
             "Difference_Score_All" = "Difference",
-            "Percentage_Score_Amp_All" = "% CNA Score Amplified",
-            "Percentage_Score_Del_All" = "% CNA Score Deleted"
+            "Percentage_Score_Amp_All" = "% Amp Score",
+            "Percentage_Score_Del_All" = "% Del Score"
         )
     )
 

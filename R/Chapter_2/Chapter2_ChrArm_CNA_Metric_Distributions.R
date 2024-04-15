@@ -45,11 +45,11 @@ CNA_Arm_Burden_CCA <- na.omit(CNA_Arm_Burden_CCA)
 CNA_Arm_Score_All %>% select_if(grepl("_1q", names(.))) %>%
     dplyr::rename(
         "CNA Score" = CNA_Score_All_1q,
-        "CNA Amplification Score" = CNA_Amp_All_1q,
-        "CNA Deletion Score" = CNA_Del_All_1q,
+        "CNA Amp Score" = CNA_Amp_All_1q,
+        "CNA Del Score" = CNA_Del_All_1q,
         "Difference Score" = CNA_Difference_All_1q,
-        "Percentage Score Amplified" = CNA_Per_Amp_All_1q,
-        "Percentage Score Deleted" = CNA_Per_Del_All_1q
+        "Percentage Amp Score" = CNA_Per_Amp_All_1q,
+        "Percentage Del Score" = CNA_Per_Del_All_1q
     ) %>%
     melt() %>%
     dplyr::rename("CNA Score Metric" = variable) %>%
@@ -96,11 +96,11 @@ CNA_Arm_Score_All %>% select_if(grepl("_1q", names(.))) %>%
 CNA_Arm_Score_CCA %>% select_if(grepl("_1q", names(.))) %>%
     dplyr::rename(
         "CNA Score" = CNA_Score_CCA_1q,
-        "CNA Amplification Score" = CNA_Amp_CCA_1q,
-        "CNA Deletion Score" = CNA_Del_CCA_1q,
+        "CNA Amp Score" = CNA_Amp_CCA_1q,
+        "CNA Del Score" = CNA_Del_CCA_1q,
         "Difference Score" = CNA_Difference_CCA_1q,
-        "Percentage Score Amplified" = CNA_Per_Amp_CCA_1q,
-        "Percentage Score Deleted" = CNA_Per_Del_CCA_1q
+        "Percentage Amp Score" = CNA_Per_Amp_CCA_1q,
+        "Percentage Del Score" = CNA_Per_Del_CCA_1q
     ) %>%
     melt() %>%
     dplyr::rename("CNA Score Metric" = variable) %>%
@@ -148,11 +148,11 @@ CNA_Arm_Score_CCA %>% select_if(grepl("_1q", names(.))) %>%
 CNA_Arm_Burden_All %>% select_if(grepl("_1q", names(.))) %>%
     dplyr::rename(
         "CNA Burden" = CNA_Burden_All_1q,
-        "CNA Amplification Burden" = CNA_Amp_All_1q,
-        "CNA Deletion Burden" = CNA_Del_All_1q,
+        "CNA Amp Burden" = CNA_Amp_All_1q,
+        "CNA Del Burden" = CNA_Del_All_1q,
         "Difference Burden" = CNA_Difference_All_1q,
-        "Percentage Burden Amplified" = CNA_Per_Amp_All_1q,
-        "Percentage Burden Deleted" = CNA_Per_Del_All_1q
+        "Percentage Amp Burden" = CNA_Per_Amp_All_1q,
+        "Percentage Del Burden" = CNA_Per_Del_All_1q
     ) %>%
     melt() %>%
     dplyr::rename("CNA Burden Metric" = variable) %>%
@@ -199,11 +199,11 @@ CNA_Arm_Burden_All %>% select_if(grepl("_1q", names(.))) %>%
 CNA_Arm_Burden_CCA %>% select_if(grepl("_1q", names(.))) %>%
     dplyr::rename(
         "CNA Burden" = CNA_Burden_CCA_1q,
-        "CNA Amplification Burden" = CNA_Amp_CCA_1q,
-        "CNA Deletion Burden" = CNA_Del_CCA_1q,
+        "CNA Amp Burden" = CNA_Amp_CCA_1q,
+        "CNA Del Burden" = CNA_Del_CCA_1q,
         "Difference Burden" = CNA_Difference_CCA_1q,
-        "Percentage Burden Amplified" = CNA_Per_Amp_CCA_1q,
-        "Percentage Burden Deleted" = CNA_Per_Del_CCA_1q
+        "Percentage Amp Burden" = CNA_Per_Amp_CCA_1q,
+        "Percentage Del Burden" = CNA_Per_Del_CCA_1q
     ) %>%
     melt() %>%
     dplyr::rename("CNA Burden Metric" = variable) %>%
@@ -294,16 +294,16 @@ for(i in 1:length(chrom)){
                 State,
                 "CNA_Score_All" = "Absolute CNA Score",
                 "CNA_Score_CCA" = "Absolute CNA Score",
-                "CNA_Amp_All" = "Amplification Score",
-                "CNA_Amp_CCA" = "Amplification Score",
-                "CNA_Del_All" = "Deletion Score",
-                "CNA_Del_CCA" = "Deletion Score",
+                "CNA_Amp_All" = "CNA Amp Score",
+                "CNA_Amp_CCA" = "CNA Amp Score",
+                "CNA_Del_All" = "CNA Del Score",
+                "CNA_Del_CCA" = "CNA Del Score",
                 "CNA_Difference_All" = "Difference",
                 "CNA_Difference_CCA" = "Difference",
-                "CNA_Per_Amp_All" = "% CNA Score Amplified",
-                "CNA_Per_Amp_CCA" = "% CNA Score Amplified",
-                "CNA_Per_Del_All" = "% CNA Score Deleted",
-                "CNA_Per_Del_CCA" = "% CNA Score Deleted"
+                "CNA_Per_Amp_All" = "% Amp Score",
+                "CNA_Per_Amp_CCA" = "% Amp Score",
+                "CNA_Per_Del_All" = "% Del Score",
+                "CNA_Per_Del_CCA" = "% Del Score"
             )
         ) %>%
         mutate(., State = factor(
@@ -311,10 +311,10 @@ for(i in 1:length(chrom)){
             levels = c(
                 'Absolute CNA Score',
                 'Difference',
-                'Amplification Score',
-                'Deletion Score',
-                '% CNA Score Amplified',
-                "% CNA Score Deleted"
+                'CNA Amp Score',
+                'CNA Del Score',
+                '% Amp Score',
+                "% Del Score"
             )
         )) %>%
         mutate(., variable = factor(
@@ -400,16 +400,16 @@ for(i in 1:length(chrom)){
                 State,
                 "CNA_Burden_All" = "Absolute CNA Burden",
                 "CNA_Burden_CCA" = "Absolute CNA Burden",
-                "CNA_Amp_All" = "Amplification Burden",
-                "CNA_Amp_CCA" = "Amplification Burden",
-                "CNA_Del_All" = "Deletion Burden",
-                "CNA_Del_CCA" = "Deletion Burden",
+                "CNA_Amp_All" = "CNA Amp Burden",
+                "CNA_Amp_CCA" = "CNA Amp Burden",
+                "CNA_Del_All" = "CNA Del Burden",
+                "CNA_Del_CCA" = "CNA Del Burden",
                 "CNA_Difference_All" = "Difference",
                 "CNA_Difference_CCA" = "Difference",
-                "CNA_Per_Amp_All" = "% CNA Burden Amplified",
-                "CNA_Per_Amp_CCA" = "% CNA Burden Amplified",
-                "CNA_Per_Del_All" = "% CNA Burden Deleted",
-                "CNA_Per_Del_CCA" = "% CNA Burden Deleted"
+                "CNA_Per_Amp_All" = "% Amp Burden",
+                "CNA_Per_Amp_CCA" = "% Amp Burden",
+                "CNA_Per_Del_All" = "% Del Burden",
+                "CNA_Per_Del_CCA" = "% Del Burden"
             )
         ) %>%
         mutate(., State = factor(
@@ -417,10 +417,10 @@ for(i in 1:length(chrom)){
             levels = c(
                 'Absolute CNA Burden',
                 'Difference',
-                'Amplification Burden',
-                'Deletion Burden',
-                '% CNA Burden Amplified',
-                "% CNA Burden Deleted"
+                'CNA Amp Burden',
+                'CNA Del Burden',
+                '% Amp Burden',
+                "% Del Burden"
             )
         )) %>%
         mutate(., variable = factor(
@@ -594,9 +594,9 @@ p1 <- ggplot() +
                    data2 = "#942092"),
         labels = c("% Amp All", "% Amp CC")
     ) +
-    ggtitle("% CNA Score Amplified on Chromosome 9p") +
+    ggtitle("% Amp Score on Chromosome 9p") +
     ylab("Density") +
-    xlab("% Amplification Score") +
+    xlab("% Amp Score") +
     theme(
         plot.title = element_text(hjust = 0.5, size = 30),
         axis.title.x = element_text(hjust = 0.5, size = 28),
@@ -640,8 +640,8 @@ p2 <- ggplot() +
                    data2 = "#942092"),
         labels = c("% Amp All", "% Amp CC")
     ) +
-    ggtitle("% CNA Burden Amplified on Chromosome 9p") +
-    ylab("Density") + xlab("% Amplification Burden") +
+    ggtitle("% Amp Burden on Chromosome 9p") +
+    ylab("Density") + xlab("% Amp Burden") +
     theme(
         plot.title = element_text(hjust = 0.5, size = 30),
         axis.title.x = element_text(hjust = 0.5, size = 28),
@@ -696,9 +696,9 @@ p1 <- ggplot() +
                    data2 = "#942092"),
         labels = c("% Del All", "% Del CC")
     ) +
-    ggtitle("% CNA Score Deleted on Chromosome 7p") +
+    ggtitle("% Del Score on Chromosome 7p") +
     ylab("Density") +
-    xlab("% Deletion Score") +
+    xlab("% Del Score") +
     theme(
         plot.title = element_text(hjust = 0.5, size = 30),
         axis.title.x = element_text(hjust = 0.5, size = 28),
@@ -742,8 +742,8 @@ p2 <- ggplot() +
                    data2 = "#942092"),
         labels = c("% Del All", "% Del CC")
     ) +
-    ggtitle("% CNA Burden Deleted on Chromosome 7p") +
-    ylab("Density") + xlab("% Deletion Burden") +
+    ggtitle("% Del Burden on Chromosome 7p") +
+    ylab("Density") + xlab("% Del Burden") +
     theme(
         plot.title = element_text(hjust = 0.5, size = 30),
         axis.title.x = element_text(hjust = 0.5, size = 28),
